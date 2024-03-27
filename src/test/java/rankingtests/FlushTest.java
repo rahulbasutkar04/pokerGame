@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FlushTest {
 
     @Test
-    void shouldAbleToCheckIfUserHasTheFiveCardsOrNot() throws InvalidNumberOfCardException, EmptyCardException {
+    void shouldBeAbleToCheckIfUserHasTheFiveCardsOrNot() throws InvalidNumberOfCardException, EmptyCardException {
         //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
@@ -34,7 +34,7 @@ public class FlushTest {
     }
 
     @Test
-    void shouldAbleToIdentifyFlush() throws EmptyCardException, InvalidNumberOfCardException {
+    void shouldBeAbleToIdentifyFlush() throws EmptyCardException, InvalidNumberOfCardException {
         //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
@@ -62,7 +62,7 @@ public class FlushTest {
     }
 
     @Test
-    void shouldThrowExceptionForEmptyCardList() {
+    void shouldBeABleToThrowExceptionForEmptyCardList() {
         //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
@@ -71,7 +71,7 @@ public class FlushTest {
     }
 
     @Test
-    void shouldThrowExceptionForLessThanFiveCards() {
+    void shouldBeAbleThrowExceptionForLessThanFiveCards() {
         //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();

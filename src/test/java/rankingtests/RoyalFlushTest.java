@@ -12,14 +12,14 @@ import ranking.RoyalFlush;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RoyalFlushTest{
 
 
 
     @Test
-    void shouldAbleToCheckIfUserHasTheFiveCardsOrNot() throws InvalidNumberOfCardException, EmptyCardException {
+    void shouldAbleToCheckIfUserHasTheFiveCardsOrNot() throws EmptyCardException, InvalidNumberOfCardException {
         //Arrange
         RoyalFlush royalFlush = new RoyalFlush();
         List<Card> cards = new ArrayList<>();
@@ -35,4 +35,60 @@ public class RoyalFlushTest{
         //Assert
         assertEquals(5, cards.size());
     }
+
+    @Test
+    void  shouldAbleToThrowExceptionIfEmptyListOfCardIsGiven(){
+        //Arrange
+        RoyalFlush royalFlush=new RoyalFlush();
+        List<Card> cards=new ArrayList<>();
+        assertThrows(EmptyCardException.class,()->{
+            royalFlush.checkRankingFor(cards);
+        });
+    }
+    @Test
+    void shouldAbleToThrowExceptionIfMorThanFiveCardIsGiven()
+    {
+        //Arrange
+        RoyalFlush royalFlush=new RoyalFlush();
+        List<Card> cards = new ArrayList<>();
+        cards.add(new Card(Rank.ACE, Suit.HEARTS));
+        cards.add(new Card(Rank.TWO, Suit.HEARTS));
+        cards.add(new Card(Rank.THREE, Suit.HEARTS));
+        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
+        cards.add(new Card(Rank.FIVE, Suit.HEARTS));
+        cards.add(new Card(Rank.SIX, Suit.HEARTS));
+        //Act & Assert
+        assertThrows(InvalidNumberOfCardException.class, () -> royalFlush.checkRankingFor(cards));
+    }
+
+    @Test
+    void shouldBeAbleThrowExceptionForLessThanFiveCards() {
+        //Arrange
+         RoyalFlush royalFlush=new RoyalFlush();
+        List<Card> cards = new ArrayList<>();
+        cards.add(new Card(Rank.ACE, Suit.HEARTS));
+        cards.add(new Card(Rank.TWO, Suit.HEARTS));
+        cards.add(new Card(Rank.THREE, Suit.HEARTS));
+        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
+        //Act & Assert
+        assertThrows(InvalidNumberOfCardException.class, () -> royalFlush.checkRankingFor(cards));
+    }
+
+
+    @Test
+    void shouldBeAbleToIdentifyRoyalFlush() throws EmptyCardException, InvalidNumberOfCardException {
+        //Arrange
+        RoyalFlush royalFlush=new RoyalFlush();
+        List<Card> cards = new ArrayList<>();
+        cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
+        cards.add(new Card(Rank.TWO, Suit.HEARTS));
+        cards.add(new Card(Rank.THREE, Suit.HEARTS));
+        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
+        cards.add(new Card(Rank.FIVE, Suit.HEARTS));
+        //Act & Assert
+        assertTrue(royalFlush.checkRankingFor(cards), "Expected flush");
+    }
+
+    //TODO:Ablve test case will run when we implement logic
+
 }
