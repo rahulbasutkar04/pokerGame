@@ -6,7 +6,6 @@ import enump.Suit;
 import exception.EmptyCardException;
 import exception.InvalidNumberOfCardException;
 import org.junit.jupiter.api.Test;
-import ranking.Flush;
 import ranking.RoyalFlush;
 
 import java.util.ArrayList;
@@ -14,8 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RoyalFlushTest{
-
+public class RoyalFlushTest {
 
 
     @Test
@@ -37,19 +35,19 @@ public class RoyalFlushTest{
     }
 
     @Test
-    void  shouldAbleToThrowExceptionIfEmptyListOfCardIsGiven(){
+    void shouldAbleToThrowExceptionIfEmptyListOfCardIsGiven() {
         //Arrange
-        RoyalFlush royalFlush=new RoyalFlush();
-        List<Card> cards=new ArrayList<>();
-        assertThrows(EmptyCardException.class,()->{
+        RoyalFlush royalFlush = new RoyalFlush();
+        List<Card> cards = new ArrayList<>();
+        assertThrows(EmptyCardException.class, () -> {
             royalFlush.checkRankingFor(cards);
         });
     }
+
     @Test
-    void shouldAbleToThrowExceptionIfMorThanFiveCardIsGiven()
-    {
+    void shouldAbleToThrowExceptionIfMorThanFiveCardIsGiven() {
         //Arrange
-        RoyalFlush royalFlush=new RoyalFlush();
+        RoyalFlush royalFlush = new RoyalFlush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
@@ -64,7 +62,7 @@ public class RoyalFlushTest{
     @Test
     void shouldBeAbleThrowExceptionForLessThanFiveCards() {
         //Arrange
-         RoyalFlush royalFlush=new RoyalFlush();
+        RoyalFlush royalFlush = new RoyalFlush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
@@ -77,18 +75,18 @@ public class RoyalFlushTest{
 
     @Test
     void shouldBeAbleToIdentifyRoyalFlush() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
-        RoyalFlush royalFlush=new RoyalFlush();
+        // Arrange
+        RoyalFlush royalFlush = new RoyalFlush();
         List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.THREE, Suit.HEARTS));
-        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-        cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
-        assertTrue(royalFlush.checkRankingFor(cards), "Expected flush");
+        cards.add(new Card(Rank.TEN, Suit.HEARTS));
+        cards.add(new Card(Rank.JACK, Suit.HEARTS));
+        cards.add(new Card(Rank.QUEEN, Suit.HEARTS));
+        cards.add(new Card(Rank.KING, Suit.HEARTS));
+        cards.add(new Card(Rank.ACE, Suit.HEARTS));
+
+        // Act & Assert
+        assertTrue(royalFlush.checkRankingFor(cards), "Expected Royal Flush");
     }
 
-    //TODO:Ablve test case will run when we implement logic
 
 }

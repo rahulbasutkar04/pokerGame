@@ -1,5 +1,4 @@
-package domain;
-
+import domain.PlayGame;
 import exception.*;
 
 public class PokerManager {

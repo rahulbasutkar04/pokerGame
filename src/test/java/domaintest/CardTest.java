@@ -1,3 +1,5 @@
+package domaintest;
+
 import domain.Card;
 import enump.Rank;
 import enump.Suit;

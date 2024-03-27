@@ -1,3 +1,5 @@
+package domaintest;
+
 import domain.Card;
 import domain.DeckOfCards;
 import domain.Player;

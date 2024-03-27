@@ -55,7 +55,7 @@ public class StraightFlushTest {
         //Arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
-       //Act & Assert
+        //Act & Assert
         assertThrows(EmptyCardException.class, () -> {
             straightFlush.checkRankingFor(cards);
         });
@@ -71,7 +71,7 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.ACE, Suit.CLUBS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
-       //Act & Assert
+        //Act & Assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
             straightFlush.checkRankingFor(cards);
         });
