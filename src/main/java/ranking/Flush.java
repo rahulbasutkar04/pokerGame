@@ -27,7 +27,6 @@ public class Flush {
     }
 
     private boolean hasFlush(Map<Suit, Integer> suitCount) {
-        // Check if all cards are of the same suit
         return suitCount.containsValue(5);
     }
 }

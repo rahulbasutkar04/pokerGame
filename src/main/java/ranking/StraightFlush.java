@@ -1,15 +1,11 @@
 package ranking;
 
 import domain.Card;
-import enump.Rank;
-import enump.Suit;
 import exception.EmptyCardException;
 import exception.InvalidNumberOfCardException;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class StraightFlush {
     private final Flush flush;

@@ -17,87 +17,84 @@ public class FlushTest {
 
     @Test
     void shouldAbleToCheckIfUserHasTheFiveCardsOrNot() throws InvalidNumberOfCardException, EmptyCardException {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
 
-        // Adding cards to the list
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
 
-        // Now, you have a list of five cards
+        // Act
         flush.checkRankingFor(cards);
-
+        //Assert
         assertEquals(5, cards.size());
     }
 
     @Test
     void shouldAbleToIdentifyFlush() throws EmptyCardException, InvalidNumberOfCardException {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
-        // Add five cards of the same suit
         cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-
+        //Act & Assert
         assertTrue(flush.checkRankingFor(cards), "Expected flush");
     }
 
     @Test
     void shouldNotIdentifyFlushIfDifferentSuits() throws EmptyCardException, InvalidNumberOfCardException {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
-        // Add five cards of different suits
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.DIAMONDS));
         cards.add(new Card(Rank.THREE, Suit.CLUBS));
         cards.add(new Card(Rank.FOUR, Suit.SPADES));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-
+        //Act & Assert
         assertFalse(flush.checkRankingFor(cards), "Expected no flush");
     }
 
     @Test
     void shouldThrowExceptionForEmptyCardList() {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
+       // Act & Assert
         assertThrows(EmptyCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldThrowExceptionForLessThanFiveCards() {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
-        // Add only four cards
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-
+        //Act & Assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldThrowExceptionForMoreThanFiveCards() {
+        //Arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
-        // Add six cards
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
         cards.add(new Card(Rank.SIX, Suit.HEARTS));
-
+        //Act & Assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 
