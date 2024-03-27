@@ -1,3 +1,4 @@
+import com.sun.source.tree.AssertTree;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +8,7 @@ public class PokerManagerTest {
 
     @Test
 
-    void shouldAbleToAssignDeckOfCardToThePlayersToPlayGame() throws InvalidNumberOfDeckException {
+    void shouldAbleToAssignDeckOfCardToThePlayersToPlayGame() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
 
         int DeckCount=4;
         PokerManager pokerManager=new PokerManager(DeckCount);  //Initially poker manager should have  4 decks only
@@ -42,5 +43,34 @@ public class PokerManagerTest {
             pokerManager.assignDeckToPlayer(-1);
 
         });
+    }
+
+
+
+    @Test
+    void shouldAbleToThrowExceptionIfNoDeckISAvailableToAllocate(){
+        int DeckCount=4;
+        PokerManager pokerManager=new PokerManager(DeckCount);
+        assertThrows(DeckOutOfAvailabilityException.class,()->{
+            pokerManager.assignDeckToPlayer(1);
+            pokerManager.assignDeckToPlayer(1);
+            pokerManager.assignDeckToPlayer(1);
+            pokerManager.assignDeckToPlayer(1);
+            pokerManager.assignDeckToPlayer(1);
+
+        });
+    }
+
+
+    @Test
+    void shouldAbleToStartTheGameForThePlayer() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
+        int DeckCount=4;
+        PokerManager pokerManager=new PokerManager(DeckCount);
+        pokerManager.assignDeckToPlayer(1);
+
+       boolean isStarted= pokerManager.startGame("Rahul");
+
+        assertTrue(isStarted);
+
     }
 }
