@@ -1,3 +1,7 @@
+package domain;
+
+import exception.*;
+
 public class PokerManager {
 
     private int deck;
@@ -21,7 +25,10 @@ public class PokerManager {
     }
 
 
-    public boolean startGame(String nameOfPlayer) {
-        return PlayGame.start(nameOfPlayer);
+    public boolean startGame(String nameOfPlayer) throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException {
+        if(assignDeckToPlayer(1)) return PlayGame.start(nameOfPlayer);
+
+
+        return  false;
     }
 }

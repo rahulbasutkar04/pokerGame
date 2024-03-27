@@ -1,3 +1,6 @@
+import domain.Card;
+import enump.Rank;
+import enump.Suit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +18,7 @@ class CardTest {
         Card card = new Card(expectedRank, expectedSuit);
 
         // Assert
-        assertNotNull(card, "Card should not be null");
+        assertNotNull(card, "domain.Card should not be null");
 
     }
 
@@ -32,7 +35,7 @@ class CardTest {
         Rank actualRank = card.getRank();
 
         // Assert
-        assertEquals(expectedRank, actualRank, "Rank should be JACK");
+        assertEquals(expectedRank, actualRank, "enump.Rank should be JACK");
 
     }
 
@@ -49,7 +52,7 @@ class CardTest {
         Suit actualSuit = card.getSuit();
 
         // Assert
-        assertEquals( ExpectedSuit, actualSuit, "Suit  should be Clubs");
+        assertEquals( ExpectedSuit, actualSuit, "enump.Suit  should be Clubs");
 
     }
 

@@ -1,3 +1,8 @@
+package domain;
+
+import enump.Rank;
+import enump.Suit;
+
 public class Card {
     private Rank rank;
     private Suit suit;
