@@ -1,8 +1,8 @@
-package ranking;
+package com.amaap.pokergame.ranking;
 
-import domain.Card;
-import exception.EmptyCardException;
-import exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.exception.EmptyCardException;
+import com.amaap.pokergame.exception.InvalidNumberOfCardException;
 
 import java.util.Comparator;
 import java.util.List;

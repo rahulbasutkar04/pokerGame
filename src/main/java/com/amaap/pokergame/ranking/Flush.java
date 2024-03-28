@@ -1,9 +1,9 @@
-package ranking;
+package com.amaap.pokergame.ranking;
 
-import domain.Card;
-import enump.Suit;
-import exception.EmptyCardException;
-import exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.model.Suit;
+import com.amaap.pokergame.exception.EmptyCardException;
+import com.amaap.pokergame.exception.InvalidNumberOfCardException;
 
 import java.util.HashMap;
 import java.util.List;

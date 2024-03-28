@@ -1,4 +1,6 @@
-import domain.PlayGame;
+import com.amaap.pokergame.domain.PlayGame;
+import com.amaap.pokergame.exception.DeckOutOfAvailabilityException;
+import com.amaap.pokergame.exception.InvalidNumberOfDeckException;
 import exception.*;
 
 public class PokerManager {

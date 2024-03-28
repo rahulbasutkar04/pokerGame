@@ -1,9 +1,7 @@
-package domain;
+package com.amaap.pokergame.domain;
 
-import domain.Card;
-import domain.Player;
-import enump.Rank;
-import enump.Suit;
+import com.amaap.pokergame.model.Rank;
+import com.amaap.pokergame.model.Suit;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,13 +1,13 @@
-package rankingtests;
+package com.amaap.pokergametest.ranking;
 
-import domain.Card;
-import enump.Rank;
-import enump.Suit;
-import exception.EmptyCardException;
-import exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.model.Rank;
+import com.amaap.pokergame.model.Suit;
+import com.amaap.pokergame.exception.EmptyCardException;
+import com.amaap.pokergame.exception.InvalidNumberOfCardException;
 import org.junit.jupiter.api.Test;
-import ranking.Flush;
-import ranking.StraightFlush;
+import com.amaap.pokergame.ranking.Flush;
+import com.amaap.pokergame.ranking.StraightFlush;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class StraightFlushTest {
 
     @Test
     void shouldAbleToCheckIfUserHasTheFiveCardsOrNot() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -27,7 +27,7 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         straightFlush.checkRankingFor(cards);
 
         assertEquals(5, cards.size());
@@ -35,7 +35,7 @@ public class StraightFlushTest {
 
     @Test
     void shouldAbleToReturnFalseIfItISNotStraightFlush() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.CLUBS));
@@ -43,19 +43,19 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act
+        // act
         boolean expected = straightFlush.checkRankingFor(cards);
-        //Assert
+        // assert
         assertFalse(expected);
 
     }
 
     @Test
     void shouldAbleToThrowExceptionIfUserHasNoCards() {
-        //Arrange
+        // arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
-        //Act & Assert
+        // act & Assert
         assertThrows(EmptyCardException.class, () -> {
             straightFlush.checkRankingFor(cards);
         });
@@ -64,14 +64,14 @@ public class StraightFlushTest {
     @Test
     void shouldAbleToThrowExceptionIfLessThanFiveCardFound() {
 
-        //Arrange
+        // arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
 
         cards.add(new Card(Rank.ACE, Suit.CLUBS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
-        //Act & Assert
+        // act & Assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
             straightFlush.checkRankingFor(cards);
         });
@@ -81,7 +81,7 @@ public class StraightFlushTest {
     @Test
     void shouldAbleToThrowExceptionIfMoreThanFiveCardFound() {
 
-        //Arrange
+        // arrange
         StraightFlush straightFlush = new StraightFlush();
         List<Card> cards = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
         cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
-        //Act & Assert
+        // act & Assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
             straightFlush.checkRankingFor(cards);
         });
@@ -100,7 +100,7 @@ public class StraightFlushTest {
 
     @Test
     void shouldBeAbleToIdentifyFlush() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -108,13 +108,13 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertTrue(flush.checkRankingFor(cards), "Expected flush");
     }
 
     @Test
     void shouldNotIdentifyFlushIfDifferentSuits() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -122,35 +122,35 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.THREE, Suit.CLUBS));
         cards.add(new Card(Rank.FOUR, Suit.SPADES));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
+        // act & Assert
         assertFalse(flush.checkRankingFor(cards), "Expected no flush");
     }
 
     @Test
     void shouldThrowExceptionForEmptyCardList() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-        //Act & Assert
+        // act & Assert
         assertThrows(EmptyCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldThrowExceptionForLessThanFiveCards() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldThrowExceptionForMoreThanFiveCards() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -159,7 +159,7 @@ public class StraightFlushTest {
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
         cards.add(new Card(Rank.SIX, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 

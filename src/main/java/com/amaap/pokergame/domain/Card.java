@@ -1,7 +1,7 @@
-package domain;
+package com.amaap.pokergame.domain;
 
-import enump.Rank;
-import enump.Suit;
+import com.amaap.pokergame.model.Rank;
+import com.amaap.pokergame.model.Suit;
 
 public class Card {
     private Rank rank;

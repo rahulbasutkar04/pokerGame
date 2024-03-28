@@ -1,12 +1,12 @@
-package rankingtests;
+package com.amaap.pokergametest.ranking;
 
-import domain.Card;
-import enump.Rank;
-import enump.Suit;
-import exception.EmptyCardException;
-import exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.exception.EmptyCardException;
+import com.amaap.pokergame.exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.model.Rank;
+import com.amaap.pokergame.model.Suit;
+import com.amaap.pokergame.ranking.Flush;
 import org.junit.jupiter.api.Test;
-import ranking.Flush;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,25 +17,24 @@ public class FlushTest {
 
     @Test
     void shouldBeAbleToCheckIfUserHasTheFiveCardsOrNot() throws InvalidNumberOfCardException, EmptyCardException {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
 
-        // Act
+        // act
         flush.checkRankingFor(cards);
-        //Assert
+        // assert
         assertEquals(5, cards.size());
     }
 
     @Test
     void shouldBeAbleToIdentifyFlush() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
@@ -43,13 +42,13 @@ public class FlushTest {
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertTrue(flush.checkRankingFor(cards), "Expected flush");
     }
 
     @Test
     void shouldNotIdentifyFlushIfDifferentSuits() throws EmptyCardException, InvalidNumberOfCardException {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -57,35 +56,35 @@ public class FlushTest {
         cards.add(new Card(Rank.THREE, Suit.CLUBS));
         cards.add(new Card(Rank.FOUR, Suit.SPADES));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertFalse(flush.checkRankingFor(cards), "Expected no flush");
     }
 
     @Test
     void shouldBeABleToThrowExceptionForEmptyCardList() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
-       // Act & Assert
+        // act & Assert
         assertThrows(EmptyCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldBeAbleThrowExceptionForLessThanFiveCards() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
         cards.add(new Card(Rank.TWO, Suit.HEARTS));
         cards.add(new Card(Rank.THREE, Suit.HEARTS));
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 
     @Test
     void shouldThrowExceptionForMoreThanFiveCards() {
-        //Arrange
+        // arrange
         Flush flush = new Flush();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -94,7 +93,7 @@ public class FlushTest {
         cards.add(new Card(Rank.FOUR, Suit.HEARTS));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
         cards.add(new Card(Rank.SIX, Suit.HEARTS));
-        //Act & Assert
+        // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> flush.checkRankingFor(cards));
     }
 

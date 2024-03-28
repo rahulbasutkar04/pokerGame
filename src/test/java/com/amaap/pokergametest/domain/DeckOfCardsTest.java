@@ -1,8 +1,8 @@
-package domaintest;
+package com.amaap.pokergametest.domain;
 
-import domain.Card;
-import domain.DeckOfCards;
-import domain.Player;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.domain.DeckOfCards;
+import com.amaap.pokergame.domain.Player;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,41 +13,41 @@ class DeckOfCardsTest {
 
     @Test
     void shouldAbleToInitialiseDeckWithAllCards() {
-        //Arrange
+        //arrange
         DeckOfCards deck = new DeckOfCards();
-        //Act
+
+        //act
         List<Card> cards = deck.getCards();
 
-        //Assert
+        //assert
         assertEquals(52, cards.size());
     }
 
 
     @Test
     void shouldAbleToAssignTheFiveCardsToUser() {
-        // Arrange
+        // arrange
         DeckOfCards deck = new DeckOfCards();
         Player user = new Player();
 
-        // Act
+        // act
         deck.assignTheFiveCardsToUser(user);
         List<Card> userHand = user.getHand();
 
-        // Assert
+        // assert
         assertEquals(5, userHand.size(), "User should have 5 cards in hand only");
         assertTrue(deck.getCards().size() >= 47, "Deck should have at least 47 cards remaining after assignment of card to player");
     }
 
     @Test
     void shouldAbleToShuffleTheCards() {
+        //arrange
         DeckOfCards deck1 = new DeckOfCards();
         DeckOfCards deck2 = new DeckOfCards();
-
-        // Shuffle both decks
+        //act
         deck1.shuffle();
         deck2.shuffle();
-
-        // Compare the order of cards in both decks
+        //assert
         assertNotEquals(deck1.getCards(), deck2.getCards(), "Decks should be shuffled differently");
     }
 

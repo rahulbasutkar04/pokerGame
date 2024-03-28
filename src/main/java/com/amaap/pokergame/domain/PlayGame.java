@@ -1,7 +1,4 @@
-package domain;
-
-import domain.Card;
-import domain.Player;
+package com.amaap.pokergame.domain;
 
 import java.util.ArrayList;
 import java.util.List;

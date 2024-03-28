@@ -1,17 +1,15 @@
-package domaintest;
+package com.amaap.pokergametest.domain;
 
-import domain.Card;
-import enump.Rank;
-import enump.Suit;
+import com.amaap.pokergame.domain.Card;
+import com.amaap.pokergame.model.Rank;
+import com.amaap.pokergame.model.Suit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
-
-
     @Test
-    void shouldAbleToCreateCardWithRankAndSuit(){
+    void shouldBeAbleToCreateCardWithRankAndSuit() {
         // Arrange
         Rank expectedRank = Rank.ACE;
         Suit expectedSuit = Suit.HEARTS;
@@ -25,9 +23,7 @@ class CardTest {
     }
 
     @Test
-    void shouldAbleToGetRankAfterCreationOfCard()
-    {
-
+    void shouldBeAbleToGetRankAfterCreationOfCard() {
         // Arrange
         Rank expectedRank = Rank.JACK;
         Suit suit = Suit.CLUBS;
@@ -42,19 +38,17 @@ class CardTest {
     }
 
     @Test
-    void shouldAbleToGetSuitAfterCreationOfCard()
-    {
-
+    void shouldBeAbleToGetSuitAfterCreationOfCard() {
         // Arrange
         Rank rank = Rank.JACK;
         Suit ExpectedSuit = Suit.CLUBS;
 
         // Act
-        Card card = new Card(rank,ExpectedSuit);
+        Card card = new Card(rank, ExpectedSuit);
         Suit actualSuit = card.getSuit();
 
         // Assert
-        assertEquals( ExpectedSuit, actualSuit, "enump.Suit  should be Clubs");
+        assertEquals(ExpectedSuit, actualSuit, "enump.Suit  should be Clubs");
 
     }
 
