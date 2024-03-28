@@ -1,4 +1,4 @@
-package com.amaap.pokergame.model.pokergame.model.exception;
+package com.amaap.pokergame.model.exception;
 
 public class DeckOutOfAvailabilityException extends Exception {
 

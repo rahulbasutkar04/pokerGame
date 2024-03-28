@@ -1,5 +1,5 @@
-import com.amaap.pokergame.model.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.pokergame.model.exception.*;
+import com.amaap.pokergame.model.domain.PlayGame;
+import com.amaap.pokergame.model.exception.*;
 
 public class PokerManager {
 

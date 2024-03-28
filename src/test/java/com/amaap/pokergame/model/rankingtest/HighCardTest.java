@@ -1,14 +1,14 @@
-package com.amaap.pokergame.model.pokergame.model.rankingtest;
+package com.amaap.pokergame.model.rankingtest;
 
-import com.amaap.pokergame.model.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.pokergame.model.domain.Rank;
-import com.amaap.pokergame.model.pokergame.model.domain.Suit;
-import com.amaap.pokergame.model.pokergame.model.exception.EmptyCardException;
-import com.amaap.pokergame.model.pokergame.model.exception.InvalidCardTypeException;
-import com.amaap.pokergame.model.pokergame.model.exception.InvalidNumberOfCardException;
-import com.amaap.pokergame.model.pokergame.model.exception.cardAlreadyExistException;
-import com.amaap.pokergame.model.pokergame.model.ranking.HighCard;
+import com.amaap.pokergame.model.domain.PlayGame;
+import com.amaap.pokergame.model.domain.Rank;
+import com.amaap.pokergame.model.domain.Suit;
+import com.amaap.pokergame.model.exception.EmptyCardException;
+import com.amaap.pokergame.model.exception.InvalidCardTypeException;
+import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.model.exception.cardAlreadyExistException;
+import com.amaap.pokergame.model.domain.Card;
+import com.amaap.pokergame.model.ranking.HighCard;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
