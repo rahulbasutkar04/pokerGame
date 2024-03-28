@@ -1,15 +1,13 @@
-package com.amaap.pokergametest.domain;
+package com.amaap.pokergametest.model.domaintest;
 
-import com.amaap.pokergame.cardAlreadyExistException;
-import com.amaap.pokergame.domain.PlayGame;
-import com.amaap.pokergame.exception.EmptyCardException;
-import com.amaap.pokergame.exception.InvalidCardTypeException;
-import com.amaap.pokergame.exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.model.exception.cardAlreadyExistException;
+import com.amaap.pokergame.model.domain.PlayGame;
+import com.amaap.pokergame.model.exception.EmptyCardException;
+import com.amaap.pokergame.model.exception.InvalidCardTypeException;
+import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -158,7 +156,7 @@ class PlayGameTest {
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfDoubleCardISFound() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
+    void shouldAbleToThrowExceptionIfDoubleCardISFound(){
 
         // arrange
         String userInput = "AH, AH, 3S, 4C, KH";

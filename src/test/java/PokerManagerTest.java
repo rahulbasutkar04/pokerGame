@@ -1,6 +1,4 @@
-import com.amaap.pokergame.cardAlreadyExistException;
-import com.amaap.pokergame.exception.*;
-import com.amaap.pokergame.model.PokerManager;
+import com.amaap.pokergame.model.exception.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

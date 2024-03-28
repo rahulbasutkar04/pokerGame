@@ -1,11 +1,9 @@
-package com.amaap.pokergame.domain;
+package com.amaap.pokergame.model.domain;
 
-import com.amaap.pokergame.cardAlreadyExistException;
-import com.amaap.pokergame.exception.EmptyCardException;
-import com.amaap.pokergame.exception.InvalidCardTypeException;
-import com.amaap.pokergame.exception.InvalidNumberOfCardException;
-import com.amaap.pokergame.model.Rank;
-import com.amaap.pokergame.model.Suit;
+import com.amaap.pokergame.model.exception.cardAlreadyExistException;
+import com.amaap.pokergame.model.exception.EmptyCardException;
+import com.amaap.pokergame.model.exception.InvalidCardTypeException;
+import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
 
 import java.util.LinkedHashSet;
 import java.util.Scanner;

@@ -1,10 +1,6 @@
-package com.amaap.pokergame.model;
-
-import com.amaap.pokergame.cardAlreadyExistException;
-import com.amaap.pokergame.domain.PlayGame;
-import com.amaap.pokergame.exception.DeckOutOfAvailabilityException;
-import com.amaap.pokergame.exception.InvalidNumberOfDeckException;
-import  com.amaap.pokergame.exception.*;
+import com.amaap.pokergame.model.exception.*;
+import com.amaap.pokergame.model.domain.PlayGame;
+import com.amaap.pokergame.model.exception.*;
 
 public class PokerManager {
 

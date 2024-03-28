@@ -1,8 +1,8 @@
-package com.amaap.pokergametest.domain;
+package com.amaap.pokergametest.model.domaintest;
 
-import com.amaap.pokergame.domain.Card;
-import com.amaap.pokergame.model.Rank;
-import com.amaap.pokergame.model.Suit;
+import com.amaap.pokergame.model.domain.Card;
+import com.amaap.pokergame.model.domain.Rank;
+import com.amaap.pokergame.model.domain.Suit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

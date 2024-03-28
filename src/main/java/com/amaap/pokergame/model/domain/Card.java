@@ -1,7 +1,4 @@
-package com.amaap.pokergame.domain;
-
-import com.amaap.pokergame.model.Rank;
-import com.amaap.pokergame.model.Suit;
+package com.amaap.pokergame.model.domain;
 
 import java.util.Objects;
 

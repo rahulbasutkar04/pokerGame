@@ -1,4 +1,4 @@
-package com.amaap.pokergame.exception;
+package com.amaap.pokergame.model.exception;
 
 public class InvalidCardTypeException extends Exception {
     public InvalidCardTypeException(String message){

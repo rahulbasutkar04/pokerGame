@@ -1,4 +1,4 @@
-package com.amaap.pokergame.model;
+package com.amaap.pokergame.model.domain;
 
 import java.util.HashMap;
 import java.util.Map;
