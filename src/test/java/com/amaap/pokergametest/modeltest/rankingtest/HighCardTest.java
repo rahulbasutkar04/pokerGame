@@ -57,4 +57,37 @@ public class HighCardTest {
         assertTrue(highCard.isHighCard(cardList));
     }
 
+    @Test
+    void shouldBeAbleToRecognizeHighCardIfOnlyHighRankedCardsAreGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
+        // arrange
+        PlayGame playGame = new PlayGame();
+        HighCard highCard = new HighCard();
+        String userInput = "AH,KD,QS,JC,QH";
+        InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inputStream);
+        // act
+        playGame.start();
+        Set<Card> cards = playGame.getUserHand();
+        List<Card> cardList = new ArrayList<>(cards);
+        // assert
+        assertTrue(highCard.isHighCard(cardList));
+
+    }
+
+    @Test
+    void shouldBeAbleToRecognizeLowHighCardIfOnlyLowerRankedCardsAreGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
+        // arrange
+        PlayGame playGame = new PlayGame();
+        HighCard highCard = new HighCard();
+        String userInput = "TH,2D,3S,5C,9H";
+        InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inputStream);
+        // act
+        playGame.start();
+        Set<Card> cards = playGame.getUserHand();
+        List<Card> cardList = new ArrayList<>(cards);
+        // assert
+        assertTrue(highCard.isHighCard(cardList));
+    }
+
 }
