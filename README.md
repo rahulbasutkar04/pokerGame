@@ -23,3 +23,33 @@ The new hand rankings are:
 
 The high card rule should return the highest card as well. For example, the hand ["S2" "D5" "C7" "ST" "HA"] should return "high-card-ace".
 
+
+# Solution:
+
+## Packages:
+-    Domain
+-    Enum
+-    Excepton
+-    Ranking
+
+## Classes
+-   Domain:
+-     Card
+-     DeckOfCard
+-     Player
+-     PlayGame
+-   Enum
+-     Rank
+-     Suit
+-   Ranking
+-     Flush
+-     RoyalFlush
+-     StraightFlush
+-     FourOfKind
+-     FullHouse
+-     Straight
+-     ThreeOfKind
+-     TowPair
+-     Pair
+-     HighCard
+
