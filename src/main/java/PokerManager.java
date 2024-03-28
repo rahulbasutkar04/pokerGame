@@ -26,7 +26,8 @@ public class PokerManager {
 
 
     public boolean startGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
-        if(assignDeckToPlayer(1)) return PlayGame.start();
+      PlayGame playGame=new PlayGame();
+        if(assignDeckToPlayer(1)) return playGame.start();
 
         return  false;
     }

@@ -11,12 +11,11 @@ import java.util.Set;
 
 public class PlayGame {
 
-    public static boolean start() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
-        DeckOfCards deck = new DeckOfCards();
-        deck.shuffle();
-        Player user = new Player();
+    private Set<Card> userHand = new LinkedHashSet<>();
 
-        Set<Card> userHand = new LinkedHashSet<>();
+    public boolean start() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+        DeckOfCards deck = new DeckOfCards();
+        Player user = new Player();
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine().trim();
@@ -24,10 +23,12 @@ public class PlayGame {
         if (input.isEmpty()) {
             throw new EmptyCardException("Input is empty.");
         }
-        String[] tokens = input.split(",");
+
+        String[] tokens = input.split(",\\s*");
         if (tokens.length != 5) {
             throw new InvalidNumberOfCardException("Exactly five cards should be provided.");
         }
+
         for (String token : tokens) {
             String trimmedToken = token.trim().toUpperCase();
             if (!isValidCardFormat(trimmedToken)) {
@@ -40,6 +41,7 @@ public class PlayGame {
             if (rank == null || suit == null) {
                 continue;
             }
+
             Card card = new Card(rank, suit);
             if (deck.getCards().contains(card)) {
                 user.selectCard(card);
@@ -50,12 +52,22 @@ public class PlayGame {
             }
         }
 
+        setUserHand(userHand);
+
         return !userHand.isEmpty();
     }
 
+    public Set<Card> getUserHand() {
+        return userHand;
+    }
+
+    public void setUserHand(Set<Card> userHand) {
+        this.userHand = userHand;
+    }
 
     private static boolean isValidCardFormat(String token) {
         return token.matches("[2-9TJQKA][HDSC]");
     }
+
 
 }

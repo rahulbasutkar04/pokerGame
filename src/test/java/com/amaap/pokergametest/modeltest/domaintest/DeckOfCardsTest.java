@@ -1,4 +1,4 @@
-package com.amaap.pokergametest.model.domaintest;
+package com.amaap.pokergametest.modeltest.domaintest;
 
 import com.amaap.pokergame.model.domain.Card;
 import com.amaap.pokergame.model.domain.DeckOfCards;
