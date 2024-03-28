@@ -1,4 +1,4 @@
-# Poker Hand Ranking Extension
+# PokerGame Extension
 
 ## Problem Statement
 
