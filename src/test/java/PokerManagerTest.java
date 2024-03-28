@@ -1,4 +1,4 @@
-import com.amaap.pokergame.model.exception.*;
+import com.amaap.pokergame.model.pokergame.model.exception.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

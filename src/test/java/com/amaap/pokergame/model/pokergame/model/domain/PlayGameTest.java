@@ -1,10 +1,9 @@
-package com.amaap.pokergametest.modeltest.domaintest;
+package com.amaap.pokergame.model.pokergame.model.domain;
 
-import com.amaap.pokergame.model.exception.cardAlreadyExistException;
-import com.amaap.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.exception.EmptyCardException;
-import com.amaap.pokergame.model.exception.InvalidCardTypeException;
-import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.model.pokergame.model.exception.cardAlreadyExistException;
+import com.amaap.pokergame.model.pokergame.model.exception.EmptyCardException;
+import com.amaap.pokergame.model.pokergame.model.exception.InvalidCardTypeException;
+import com.amaap.pokergame.model.pokergame.model.exception.InvalidNumberOfCardException;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

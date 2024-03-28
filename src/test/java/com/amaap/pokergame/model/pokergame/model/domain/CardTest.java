@@ -1,8 +1,5 @@
-package com.amaap.pokergametest.modeltest.domaintest;
+package com.amaap.pokergame.model.pokergame.model.domain;
 
-import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.Rank;
-import com.amaap.pokergame.model.domain.Suit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,15 +10,11 @@ class CardTest {
         // Arrange
         Rank expectedRank = Rank.ACE;
         Suit expectedSuit = Suit.HEARTS;
-
         // Act
         Card card = new Card(expectedRank, expectedSuit);
-
         // Assert
         assertNotNull(card, "domain.Card should not be null");
-
     }
-
     @Test
     void shouldBeAbleToGetRankAfterCreationOfCard() {
         // Arrange

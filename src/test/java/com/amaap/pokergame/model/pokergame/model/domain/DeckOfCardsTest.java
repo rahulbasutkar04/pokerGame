@@ -1,8 +1,5 @@
-package com.amaap.pokergametest.modeltest.domaintest;
+package com.amaap.pokergame.model.pokergame.model.domain;
 
-import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.DeckOfCards;
-import com.amaap.pokergame.model.domain.Player;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
