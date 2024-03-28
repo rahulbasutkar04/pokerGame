@@ -1,7 +1,10 @@
+package com.amaap.pokergame.model;
+
+import com.amaap.pokergame.cardAlreadyExistException;
 import com.amaap.pokergame.domain.PlayGame;
 import com.amaap.pokergame.exception.DeckOutOfAvailabilityException;
 import com.amaap.pokergame.exception.InvalidNumberOfDeckException;
-import exception.*;
+import  com.amaap.pokergame.exception.*;
 
 public class PokerManager {
 
@@ -26,9 +29,8 @@ public class PokerManager {
     }
 
 
-    public boolean startGame(String nameOfPlayer) throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException {
-        if(assignDeckToPlayer(1)) return PlayGame.start(nameOfPlayer);
-
+    public boolean startGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+        if(assignDeckToPlayer(1)) return PlayGame.start();
 
         return  false;
     }

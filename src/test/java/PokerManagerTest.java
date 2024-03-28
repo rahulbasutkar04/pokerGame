@@ -1,6 +1,9 @@
-import com.amaap.pokergame.exception.DeckOutOfAvailabilityException;
-import com.amaap.pokergame.exception.InvalidNumberOfDeckException;
+import com.amaap.pokergame.cardAlreadyExistException;
+import com.amaap.pokergame.exception.*;
+import com.amaap.pokergame.model.PokerManager;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayInputStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -67,16 +70,18 @@ public class PokerManagerTest {
 
 
     @Test
-    void shouldAbleToStartTheGameForThePlayer() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
+    void shouldAbleToStartTheGameForThePlayer() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException, InvalidNumberOfCardException, EmptyCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
         // arrange
-        int DeckCount = 4;
-        PokerManager pokerManager = new PokerManager(DeckCount);
+        int deckCount = 4;
+        PokerManager pokerManager = new PokerManager(deckCount);
         pokerManager.assignDeckToPlayer(1);
-
+        ByteArrayInputStream in = new ByteArrayInputStream("AH, 2D, 3S, 4C, KH".getBytes());
+        System.setIn(in);
         // act
-        boolean isCardAssignedToUSer = pokerManager.startGame("Rahul");
+        boolean isGameStarted = pokerManager.startGame();
         // assert
-        assertTrue(isCardAssignedToUSer);
-
+        assertTrue(isGameStarted);
     }
+
 }
+
