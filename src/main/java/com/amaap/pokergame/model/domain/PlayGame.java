@@ -4,19 +4,20 @@ import com.amaap.pokergame.model.exception.EmptyCardException;
 import com.amaap.pokergame.model.exception.InvalidCardTypeException;
 import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.model.exception.cardAlreadyExistException;
+import com.amaap.pokergame.model.util.HandRanking;
+import com.amaap.pokergame.model.util.Rank;
+import com.amaap.pokergame.model.util.Suit;
 
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class PlayGame {
 
-    private Set<Card> userHand = new LinkedHashSet<>();
-
+    private List<Card> userHand = new ArrayList<>();
     public boolean start() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
         DeckOfCards deck = new DeckOfCards();
         Player user = new Player();
-
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine().trim();
 
@@ -53,15 +54,14 @@ public class PlayGame {
         }
 
         setUserHand(userHand);
-
         return !userHand.isEmpty();
     }
 
-    public Set<Card> getUserHand() {
+    public List<Card> getUserHand() {
         return userHand;
     }
 
-    public void setUserHand(Set<Card> userHand) {
+    public void setUserHand(List<Card> userHand) {
         this.userHand = userHand;
     }
 
@@ -70,4 +70,10 @@ public class PlayGame {
     }
 
 
+    public String getHandRankFor(List<Card> cards) {
+        HandEvaluator handEvaluator = new HandEvaluator();
+        HandRanking handRanking = handEvaluator.evaluateHand(cards);
+
+        return handRanking.getFullName();
+    }
 }

@@ -1,4 +1,4 @@
-package com.amaap.pokergame.model.domain;
+package com.amaap.pokergame.model.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,15 +14,9 @@ public enum Rank {
             keywordMap.put(rank.keyword, rank);
         }
     }
-
     Rank(String keyword) {
         this.keyword = keyword;
     }
-
-    public String getKeyword() {
-        return keyword;
-    }
-
     public static Rank fromKeyword(String keyword) {
         return keywordMap.get(keyword.toUpperCase());
     }

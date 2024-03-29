@@ -1,9 +1,9 @@
 package com.amaap.pokergame.model.ranking;
 
 import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.Rank;
-import com.amaap.pokergame.model.domain.Suit;
+import com.amaap.pokergame.model.util.Rank;
 import com.amaap.pokergame.model.util.StraightFlushCheck;
+import com.amaap.pokergame.model.util.Suit;
 
 import java.util.List;
 

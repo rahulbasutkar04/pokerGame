@@ -1,5 +1,8 @@
 package com.amaap.pokergame.model.domain;
 
+import com.amaap.pokergame.model.util.Rank;
+import com.amaap.pokergame.model.util.Suit;
+
 import java.util.Objects;
 
 public class Card {
@@ -18,6 +21,7 @@ public class Card {
     public Suit getSuit() {
         return suit;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,6 +30,7 @@ public class Card {
         return rank == card.rank &&
                 suit == card.suit;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(rank, suit);

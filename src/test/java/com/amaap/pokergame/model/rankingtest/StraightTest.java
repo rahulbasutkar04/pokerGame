@@ -2,21 +2,19 @@ package com.amaap.pokergame.model.rankingtest;
 
 import com.amaap.pokergame.model.domain.Card;
 import com.amaap.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.domain.Rank;
-import com.amaap.pokergame.model.domain.Suit;
 import com.amaap.pokergame.model.exception.EmptyCardException;
 import com.amaap.pokergame.model.exception.InvalidCardTypeException;
 import com.amaap.pokergame.model.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.model.exception.cardAlreadyExistException;
 import com.amaap.pokergame.model.ranking.Straight;
-import com.amaap.pokergame.model.ranking.ThreeOfKind;
+import com.amaap.pokergame.model.util.Rank;
+import com.amaap.pokergame.model.util.Suit;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -25,7 +23,7 @@ public class StraightTest {
 
     @Test
     void shouldBeAbleToIdentifyTheRankOfHandCardIsStraight() {
-        // arrange
+        //arrange
         Straight straight = new Straight();
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
@@ -33,56 +31,54 @@ public class StraightTest {
         cards.add(new Card(Rank.THREE, Suit.CLUBS));
         cards.add(new Card(Rank.FOUR, Suit.SPADES));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        // act
+        //act
         boolean actual = straight.isStraightFlushCheck(cards);
-        // assert
+        //assert
         assertTrue(actual);
     }
 
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        // arrange
+        //arrange
         PlayGame playGame = new PlayGame();
         Straight straight = new Straight();
         String userInput = "AH,2D,3S,4C,5H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        // act
+        //act
         playGame.start();
-        Set<Card> cards = playGame.getUserHand();
-        List<Card> cardList = new ArrayList<>(cards);
-        // assert
-        assertTrue(straight.isStraightFlushCheck(cardList));
+        List<Card> cards = playGame.getUserHand();
+        //assert
+        assertTrue(straight.isStraightFlushCheck(cards));
     }
 
     @Test
     void shouldNotBeAbleToIdentifyStraightCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
+        //arrange
         PlayGame playGame = new PlayGame();
         Straight straight = new Straight();
         String userInput = "TH,JD,QS,KC,AH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        // act
+        //act
         playGame.start();
-        Set<Card> cards = playGame.getUserHand();
-        List<Card> cardList = new ArrayList<>(cards);
-        // assert
-        assertFalse(straight.isStraightFlushCheck(cardList));
+        List<Card> cards = playGame.getUserHand();
+        //assert
+        assertFalse(straight.isStraightFlushCheck(cards));
     }
 
     @Test
     void shouldBeAbleToIdentifyStraightCardIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        // arrange
+        //arrange
         PlayGame playGame = new PlayGame();
         Straight straight = new Straight();
         String userInput = "AH,5H,4S,2C,3D";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        // act
+        //act
         playGame.start();
-        Set<Card> cards = playGame.getUserHand();
-        List<Card> cardList = new ArrayList<>(cards);
-        // assert
-        assertTrue(straight.isStraightFlushCheck(cardList));
+        List<Card> cards = playGame.getUserHand();
+        //assert
+        assertTrue(straight.isStraightFlushCheck(cards));
     }
 }

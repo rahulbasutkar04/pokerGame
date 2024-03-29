@@ -1,4 +1,4 @@
-package com.amaap.pokergame.model.domain;
+package com.amaap.pokergame.model.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,10 +17,6 @@ public enum Suit {
 
     Suit(String keyword) {
         this.keyword = keyword;
-    }
-
-    public String getKeyword() {
-        return keyword;
     }
 
     public static Suit fromKeyword(String keyword) {

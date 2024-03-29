@@ -1,7 +1,9 @@
 package com.amaap.pokergame.model.domain;
 
+import com.amaap.pokergame.model.util.Rank;
+import com.amaap.pokergame.model.util.Suit;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DeckOfCards {
@@ -24,19 +26,14 @@ public class DeckOfCards {
         return cards;
     }
 
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
-
 
     public void assignTheFiveCardsToUser(Player user) {
         if (cards.size() < 5) {
             throw new IllegalStateException("Insufficient cards in the deck");
         }
-
         for (int i = 0; i < 5; i++) {
-            Card dealtCard = cards.remove(0); // Remove the top card from the deck
-            user.selectCard(dealtCard); // Add the card to the user's hand
+            Card dealtCard = cards.remove(0);
+            user.selectCard(dealtCard);
         }
     }
 

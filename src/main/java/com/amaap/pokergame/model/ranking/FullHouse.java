@@ -1,7 +1,7 @@
 package com.amaap.pokergame.model.ranking;
 
 import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.Rank;
+import com.amaap.pokergame.model.util.Rank;
 import com.amaap.pokergame.model.util.RankCount;
 
 import java.util.List;
