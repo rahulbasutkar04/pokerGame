@@ -34,7 +34,7 @@ public class StraightTest {
         cards.add(new Card(Rank.FOUR, Suit.SPADES));
         cards.add(new Card(Rank.FIVE, Suit.HEARTS));
         // act
-        boolean actual = straight.isStraight(cards);
+        boolean actual = straight.isStraightFlushCheck(cards);
         // assert
         assertTrue(actual);
     }
@@ -52,7 +52,7 @@ public class StraightTest {
         Set<Card> cards = playGame.getUserHand();
         List<Card> cardList = new ArrayList<>(cards);
         // assert
-        assertTrue(straight.isStraight(cardList));
+        assertTrue(straight.isStraightFlushCheck(cardList));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class StraightTest {
         Set<Card> cards = playGame.getUserHand();
         List<Card> cardList = new ArrayList<>(cards);
         // assert
-        assertFalse(straight.isStraight(cardList));
+        assertFalse(straight.isStraightFlushCheck(cardList));
     }
 
     @Test
@@ -83,6 +83,6 @@ public class StraightTest {
         Set<Card> cards = playGame.getUserHand();
         List<Card> cardList = new ArrayList<>(cards);
         // assert
-        assertTrue(straight.isStraight(cardList));
+        assertTrue(straight.isStraightFlushCheck(cardList));
     }
 }
