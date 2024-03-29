@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.pokergame.domain.model.DeckOfCardsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.002">
+  <properties/>
+  <testcase name="shouldAbleToInitialiseDeckWithAllCards()" classname="com.amaap.pokergame.domain.model.DeckOfCardsTest" time="0.001"/>
+  <testcase name="shouldAbleToAssignTheFiveCardsToUser()" classname="com.amaap.pokergame.domain.model.DeckOfCardsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

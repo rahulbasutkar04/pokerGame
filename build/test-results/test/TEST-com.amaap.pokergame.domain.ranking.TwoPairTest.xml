@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.pokergame.domain.ranking.TwoPairTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.009">
+  <properties/>
+  <testcase name="shouldNotBeAbleToIdentifyTwoPairCardIfItIsNot()" classname="com.amaap.pokergame.domain.ranking.TwoPairTest" time="0.002"/>
+  <testcase name="shouldBeAbleToIdentifyTheRankOfHandCardIsTwoPair()" classname="com.amaap.pokergame.domain.ranking.TwoPairTest" time="0.0"/>
+  <testcase name="shouldBeAbleToIdentifyPairCardIfPresentAtAnyOrder()" classname="com.amaap.pokergame.domain.ranking.TwoPairTest" time="0.001"/>
+  <testcase name="shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven()" classname="com.amaap.pokergame.domain.ranking.TwoPairTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

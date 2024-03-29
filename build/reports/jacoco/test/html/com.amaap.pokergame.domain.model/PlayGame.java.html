@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayGame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pokerGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.pokergame.domain.model</a> &gt; <span class="el_source">PlayGame.java</span></div><h1>PlayGame.java</h1><pre class="source lang-java linenums">package com.amaap.pokergame.domain.model;
+
+import com.amaap.pokergame.domain.exception.EmptyCardException;
+import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
+import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
+import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+<span class="fc" id="L12">public class PlayGame {</span>
+
+<span class="fc" id="L14">    private List&lt;Card&gt; userHand = new ArrayList&lt;&gt;();</span>
+    public boolean start() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+<span class="fc" id="L16">        DeckOfCards deck = new DeckOfCards();</span>
+<span class="fc" id="L17">        Player user = new Player();</span>
+<span class="fc" id="L18">        Scanner scanner = new Scanner(System.in);</span>
+<span class="fc" id="L19">        String input = scanner.nextLine().trim();</span>
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (input.isEmpty()) {</span>
+<span class="fc" id="L22">            throw new EmptyCardException(&quot;Input is empty.&quot;);</span>
+        }
+
+<span class="fc" id="L25">        String[] tokens = input.split(&quot;,\\s*&quot;);</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (tokens.length != 5) {</span>
+<span class="fc" id="L27">            throw new InvalidNumberOfCardException(&quot;Exactly five cards should be provided.&quot;);</span>
+        }
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        for (String token : tokens) {</span>
+<span class="fc" id="L31">            String trimmedToken = token.trim().toUpperCase();</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            if (!isValidCardFormat(trimmedToken)) {</span>
+<span class="fc" id="L33">                throw new InvalidCardTypeException(&quot;Invalid card format: &quot; + token);</span>
+            }
+
+<span class="fc" id="L36">            Rank rank = Rank.fromKeyword(String.valueOf(trimmedToken.charAt(0)));</span>
+<span class="fc" id="L37">            Suit suit = Suit.fromKeyword(String.valueOf(trimmedToken.charAt(1)));</span>
+
+<span class="fc" id="L39">            Card card = new Card(rank, suit);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (deck.getCards().contains(card)) {</span>
+<span class="fc" id="L41">                user.selectCard(card);</span>
+<span class="fc" id="L42">                userHand.add(card);</span>
+<span class="fc" id="L43">                deck.getCards().remove(card);</span>
+            } else {
+<span class="fc" id="L45">                throw new cardAlreadyExistException(&quot;Duplicate card found&quot;);</span>
+            }
+        }
+
+<span class="fc" id="L49">        setUserHand(userHand);</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        return !userHand.isEmpty();</span>
+    }
+
+    public List&lt;Card&gt; getUserHand() {
+<span class="fc" id="L54">        return userHand;</span>
+    }
+
+    public void setUserHand(List&lt;Card&gt; userHand) {
+<span class="fc" id="L58">        this.userHand = userHand;</span>
+<span class="fc" id="L59">    }</span>
+
+    private static boolean isValidCardFormat(String token) {
+<span class="fc" id="L62">        return token.matches(&quot;[2-9TJQKA][HDSC]&quot;);</span>
+    }
+
+
+    public String getHandRankFor(List&lt;Card&gt; cards) {
+<span class="fc" id="L67">        HandEvaluator handEvaluator = new HandEvaluator();</span>
+<span class="fc" id="L68">        HandRanking handRanking = handEvaluator.evaluateHand(cards);</span>
+
+<span class="fc" id="L70">        return handRanking.getFullName();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

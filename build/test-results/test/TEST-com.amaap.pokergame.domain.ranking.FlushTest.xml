@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.pokergame.domain.ranking.FlushTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.011">
+  <properties/>
+  <testcase name="shouldNotBeAbleToIdentifyFlushCardIfItIsNot()" classname="com.amaap.pokergame.domain.ranking.FlushTest" time="0.005"/>
+  <testcase name="shouldBeAbleToIdentifyTheRankOfHandCardIsFlush()" classname="com.amaap.pokergame.domain.ranking.FlushTest" time="0.001"/>
+  <testcase name="shouldBeAbleToIdentifyFlushCardIfPresentAtAnyOrder()" classname="com.amaap.pokergame.domain.ranking.FlushTest" time="0.001"/>
+  <testcase name="shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven()" classname="com.amaap.pokergame.domain.ranking.FlushTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

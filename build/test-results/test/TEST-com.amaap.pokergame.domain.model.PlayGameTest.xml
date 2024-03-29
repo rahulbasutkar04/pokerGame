@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.pokergame.domain.model.PlayGameTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.09">
+  <properties/>
+  <testcase name="shouldBeAbleToThrowExceptionIfOtherThanCardIsGivenAsInput()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.011"/>
+  <testcase name="shouldABleToThrowExceptionIfMoreThanFiveCardsAreGiven()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfSpacesAreGivenAfterEachCard()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.007"/>
+  <testcase name="shouldBeABleToThrowExceptionIfOtherThanCardIsGivenInput()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowInvalidCardTypeExceptionIfCompleteCardIsNotGiven()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.006"/>
+  <testcase name="shouldAbleToThrowExceptionIfDoubleCardISFound()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfLessThanThreeCardsAreGiven()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.003"/>
+  <testcase name="shouldBeAbleToTakeFiveCardsAsInputFromTheUser()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.034"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfPlaceOfRankAndSuitsAreInterchanged()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.003"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfInvalidInoutFormatIsGiven()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfSpacesAreGivenInput()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfInputISEmpty()" classname="com.amaap.pokergame.domain.model.PlayGameTest" time="0.003"/>
+  <system-out><![CDATA[[ACE of HEARTS, TWO of DIAMONDS, THREE of SPADES, FOUR of CLUBS, KING of HEARTS]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

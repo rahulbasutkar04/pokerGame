@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FullHouse.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pokerGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.pokergame.model.ranking</a> &gt; <span class="el_source">FullHouse.java</span></div><h1>FullHouse.java</h1><pre class="source lang-java linenums">package com.amaap.pokergame.model.ranking;
+
+import com.amaap.pokergame.model.domain.Card;
+import com.amaap.pokergame.model.util.Rank;
+import com.amaap.pokergame.model.util.RankCount;
+
+import java.util.List;
+import java.util.Map;
+
+<span class="fc" id="L10">public class FullHouse {</span>
+    public boolean isFullHouse(List&lt;Card&gt; cards) {
+<span class="fc" id="L12">        RankCount rc = new RankCount();</span>
+<span class="fc" id="L13">        Map&lt;Rank, Integer&gt; rankCount = rc.rankCount(cards);</span>
+<span class="fc" id="L14">        return hasFullHouse(rankCount);</span>
+    }
+
+    private static boolean hasFullHouse(Map&lt;Rank, Integer&gt; rankCount) {
+<span class="fc bfc" id="L18" title="All 4 branches covered.">        return rankCount.containsValue(3) &amp;&amp; rankCount.containsValue(2);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

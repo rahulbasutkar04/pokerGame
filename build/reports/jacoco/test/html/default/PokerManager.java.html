@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PokerManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pokerGame</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">PokerManager.java</span></div><h1>PokerManager.java</h1><pre class="source lang-java linenums">import com.amaap.pokergame.domain.model.Card;
+import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.exception.*;
+
+import java.util.List;
+
+public class PokerManager {
+    private int deck;
+    private PlayGame playGame;
+
+<span class="fc" id="L11">    public PokerManager(int deck) {</span>
+<span class="fc" id="L12">        this.deck = deck;</span>
+<span class="fc" id="L13">    }</span>
+
+    public int getDeck() {
+<span class="fc" id="L16">        return deck;</span>
+    }
+
+    public boolean assignDeckToPlayer(int numberOfDeck) throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (numberOfDeck &lt;= 0) throw new InvalidNumberOfDeckException(&quot;zero or less than this deck can not be allocated.&quot;);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (numberOfDeck &gt; 1) throw new InvalidNumberOfDeckException(&quot;More than one deck cannot be allocated.&quot;);</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (deck == 0) {</span>
+<span class="fc" id="L23">            throw new DeckOutOfAvailabilityException();</span>
+        }
+<span class="fc" id="L25">        deck--;</span>
+<span class="fc" id="L26">        return true;</span>
+    }
+
+    public boolean startGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+<span class="fc" id="L30">        playGame = new PlayGame();</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (assignDeckToPlayer(1)) return playGame.start();</span>
+<span class="nc" id="L32">        return false;</span>
+    }
+
+    public String getHandRank(List&lt;Card&gt; card) {
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (playGame == null) {</span>
+<span class="nc" id="L37">            throw new IllegalStateException(&quot;The game has not started yet... Call startGame() first.&quot;);</span>
+        }
+<span class="fc" id="L39">        return playGame.getHandRankFor(card);</span>
+    }
+
+    public PlayGame getPlayGame() {
+<span class="fc" id="L43">        return playGame;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

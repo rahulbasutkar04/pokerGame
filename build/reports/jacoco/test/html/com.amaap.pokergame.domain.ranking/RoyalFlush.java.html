@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RoyalFlush.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pokerGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.pokergame.domain.ranking</a> &gt; <span class="el_source">RoyalFlush.java</span></div><h1>RoyalFlush.java</h1><pre class="source lang-java linenums">package com.amaap.pokergame.domain.ranking;
+
+import com.amaap.pokergame.domain.model.Card;
+import com.amaap.pokergame.domain.model.Rank;
+import com.amaap.pokergame.domain.model.StraightFlushCheck;
+import com.amaap.pokergame.domain.model.Suit;
+
+import java.util.List;
+
+<span class="fc" id="L10">public class RoyalFlush implements StraightFlushCheck {</span>
+    @Override
+    public boolean isStraightFlushCheck(List&lt;Card&gt; cards) {
+
+<span class="fc" id="L14">        Suit firstSuit = cards.get(0).getSuit();</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        boolean sameSuit = cards.stream().allMatch(card -&gt; card.getSuit() == firstSuit);</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (!sameSuit) {</span>
+<span class="fc" id="L17">            return false;</span>
+        }
+<span class="fc" id="L19">        boolean containsTen = false, containsJack = false, containsQueen = false, containsKing = false, containsAce = false;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (Card card : cards) {</span>
+<span class="fc" id="L21">            Rank rank = card.getRank();</span>
+<span class="fc bfc" id="L22" title="All 6 branches covered.">            switch (rank) {</span>
+                case TEN:
+<span class="fc" id="L24">                    containsTen = true;</span>
+<span class="fc" id="L25">                    break;</span>
+                case JACK:
+<span class="fc" id="L27">                    containsJack = true;</span>
+<span class="fc" id="L28">                    break;</span>
+                case QUEEN:
+<span class="fc" id="L30">                    containsQueen = true;</span>
+<span class="fc" id="L31">                    break;</span>
+                case KING:
+<span class="fc" id="L33">                    containsKing = true;</span>
+<span class="fc" id="L34">                    break;</span>
+                case ACE:
+<span class="fc" id="L36">                    containsAce = true;</span>
+                    break;
+            }
+<span class="fc" id="L39">        }</span>
+
+<span class="pc bpc" id="L41" title="4 of 10 branches missed.">        return containsTen &amp;&amp; containsJack &amp;&amp; containsQueen &amp;&amp; containsKing &amp;&amp; containsAce;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
