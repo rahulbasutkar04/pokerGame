@@ -110,4 +110,14 @@ public class CardBuilder {
 
         return  cards;
     }
+
+    public List<Card> getCardForFlush() {
+        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
+        cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
+        cards.add(new Card(Rank.SIX, Suit.HEARTS));
+        cards.add(new Card(Rank.SEVEN, Suit.HEARTS));
+        cards.add(new Card(Rank.TWO, Suit.HEARTS));
+
+        return  cards;
+    }
 }

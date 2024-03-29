@@ -36,10 +36,6 @@ public class PlayGame {
             Rank rank = Rank.fromKeyword(String.valueOf(trimmedToken.charAt(0)));
             Suit suit = Suit.fromKeyword(String.valueOf(trimmedToken.charAt(1)));
 
-            if (rank == null || suit == null) {
-                continue;
-            }
-
             Card card = new Card(rank, suit);
             if (deck.getCards().contains(card)) {
                 user.selectCard(card);

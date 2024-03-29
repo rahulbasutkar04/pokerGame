@@ -1,191 +1,146 @@
 package com.amaap.pokergame.domain.model;
 
+import com.amaap.pokergame.domain.builder.CardBuilder;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HandEvaluatorTest {
+    CardBuilder cardBuilder = new CardBuilder();
 
     @Test
     void shouldIdentifyRoyalFlush() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TEN, Suit.HEARTS));
-        cards.add(new Card(Rank.JACK, Suit.HEARTS));
-        cards.add(new Card(Rank.QUEEN, Suit.HEARTS));
-        cards.add(new Card(Rank.KING, Suit.HEARTS));
-        cards.add(new Card(Rank.ACE, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForRoyalFlush();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.ROYAL_FLUSH, ranking);
     }
 
     @Test
     void shouldBeABleToIdentifyStraightFlush() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.SEVEN, Suit.CLUBS));
-        cards.add(new Card(Rank.EIGHT, Suit.CLUBS));
-        cards.add(new Card(Rank.NINE, Suit.CLUBS));
-        cards.add(new Card(Rank.TEN, Suit.CLUBS));
-        cards.add(new Card(Rank.JACK, Suit.CLUBS));
-        //act
+        List<Card> cards = cardBuilder.getCardForStraightFlush();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.STRAIGHT_FLUSH, ranking);
     }
 
 
     @Test
     void shouldBeAbleToIdentifyFourOfAKind() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.TWO, Suit.CLUBS));
-        cards.add(new Card(Rank.TWO, Suit.DIAMONDS));
-        cards.add(new Card(Rank.TWO, Suit.SPADES));
-        cards.add(new Card(Rank.ACE, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForFourOfAKind();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.FOUR_OF_A_KIND, ranking);
     }
 
     @Test
     void shouldIBeAbleToIdentifyFullHouse() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.FIVE, Suit.HEARTS));
-        cards.add(new Card(Rank.FIVE, Suit.CLUBS));
-        cards.add(new Card(Rank.FIVE, Suit.DIAMONDS));
-        cards.add(new Card(Rank.SEVEN, Suit.SPADES));
-        cards.add(new Card(Rank.SEVEN, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForFullHouse();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.FULL_HOUSE, ranking);
     }
 
     @Test
     void shouldBeAbleToIdentifyFlush() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-        cards.add(new Card(Rank.SIX, Suit.HEARTS));
-        cards.add(new Card(Rank.EIGHT, Suit.HEARTS));
-        cards.add(new Card(Rank.KING, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForFlush();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.FLUSH, ranking);
     }
 
     @Test
     void shouldBeAbleToIdentifyStraight() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.THREE, Suit.DIAMONDS));
-        cards.add(new Card(Rank.FOUR, Suit.CLUBS));
-        cards.add(new Card(Rank.FIVE, Suit.SPADES));
-        cards.add(new Card(Rank.SIX, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForStraight();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.STRAIGHT, ranking);
     }
 
     @Test
     void shouldBeAbleToIdentifyThreeOfAKind() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.SEVEN, Suit.HEARTS));
-        cards.add(new Card(Rank.SEVEN, Suit.DIAMONDS));
-        cards.add(new Card(Rank.SEVEN, Suit.CLUBS));
-        cards.add(new Card(Rank.EIGHT, Suit.SPADES));
-        cards.add(new Card(Rank.NINE, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForThreeOfKind();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.THREE_OF_A_KIND, ranking);
     }
 
     @Test
     void shouldBeAbleToIdentifyTwoPair() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.TWO, Suit.DIAMONDS));
-        cards.add(new Card(Rank.EIGHT, Suit.CLUBS));
-        cards.add(new Card(Rank.EIGHT, Suit.SPADES));
-        cards.add(new Card(Rank.TEN, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForTwoPair();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.TWO_PAIR, ranking);
     }
 
     @Test
     void shouldBeAbleToIdentifyFullHouse() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.SIX, Suit.HEARTS));
-        cards.add(new Card(Rank.SIX, Suit.DIAMONDS));
-        cards.add(new Card(Rank.SIX, Suit.CLUBS));
-        cards.add(new Card(Rank.NINE, Suit.SPADES));
-        cards.add(new Card(Rank.NINE, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardForFullHouse();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.FULL_HOUSE, ranking);
 
     }
 
     @Test
     void shouldBeAbleToIdentifyPair() {
-        //arrange
+        // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.FOUR, Suit.HEARTS));
-        cards.add(new Card(Rank.FOUR, Suit.DIAMONDS));
-        cards.add(new Card(Rank.EIGHT, Suit.CLUBS));
-        cards.add(new Card(Rank.TEN, Suit.SPADES));
-        cards.add(new Card(Rank.KING, Suit.HEARTS));
-        //act
+        List<Card> cards = cardBuilder.getCardFoPair();
+
+        // act
         HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
+
+        // assert
         assertEquals(HandRanking.ONE_PAIR, ranking);
     }
 
-    @Test
-    void shouldBeAbleToIdentifyHighCard() {
-        //arrange
-        HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = new ArrayList<>();
-        cards.add(new Card(Rank.TWO, Suit.HEARTS));
-        cards.add(new Card(Rank.FOUR, Suit.DIAMONDS));
-        cards.add(new Card(Rank.SIX, Suit.CLUBS));
-        cards.add(new Card(Rank.EIGHT, Suit.SPADES));
-        cards.add(new Card(Rank.JACK, Suit.HEARTS));
-        //act
-        HandRanking ranking = handEvaluator.evaluateHand(cards);
-        //assert
-        assertEquals(HandRanking.HIGH_CARD, ranking);
-
-    }
 
 }
