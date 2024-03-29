@@ -1,6 +1,6 @@
-import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.exception.*;
+import com.amaap.pokergame.domain.model.Card;
+import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.exception.*;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class PokerManager {
     }
 
     public boolean assignDeckToPlayer(int numberOfDeck) throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
-        if (numberOfDeck <= 0) throw new InvalidNumberOfDeckException("zero or less than this can not be allocated.");
+        if (numberOfDeck <= 0) throw new InvalidNumberOfDeckException("zero or less than this deck can not be allocated.");
         if (numberOfDeck > 1) throw new InvalidNumberOfDeckException("More than one deck cannot be allocated.");
         if (deck == 0) {
             throw new DeckOutOfAvailabilityException();

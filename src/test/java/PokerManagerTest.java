@@ -1,6 +1,6 @@
-import com.amaap.pokergame.model.domain.Card;
-import com.amaap.pokergame.model.domain.PlayGame;
-import com.amaap.pokergame.model.exception.*;
+import com.amaap.pokergame.domain.exception.*;
+import com.amaap.pokergame.domain.model.Card;
+import com.amaap.pokergame.domain.model.PlayGame;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
