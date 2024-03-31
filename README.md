@@ -25,6 +25,7 @@ The high card rule should return the highest card as well. For example, the hand
 
 
 # Solution:
+![image](https://github.com/rahulbasutkar04/pokerGame/assets/115400916/f10a028d-6c75-43ca-a68a-01d8cd12c26b)
 
 ## Packages:
 -    Domain
@@ -52,4 +53,6 @@ The high card rule should return the highest card as well. For example, the hand
 -     TowPair
 -     Pair
 -     HighCard
+     
+
 
