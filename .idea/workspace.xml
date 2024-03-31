@@ -5,8 +5,114 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b479922-a203-4987-b315-9dc6ba714c59" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/PokerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/PokerManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/DeckOutOfAvailabilityException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/DeckOutOfAvailabilityException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/EmptyCardException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/EmptyCardException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidCardTypeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidCardTypeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidNumberOfCardException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidNumberOfCardException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidNumberOfDeckException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/InvalidNumberOfDeckException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/cardAlreadyExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/exception/cardAlreadyExistException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/DeckOfCards.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/DeckOfCards.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/HandEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/HandEvaluator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/HandRanking.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/HandRanking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/PlayGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Rank.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Rank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/RankCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/RankCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/StraightFlushCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/StraightFlushCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Suit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/model/Suit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Flush.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Flush.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/FourOfKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/FourOfKind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/FullHouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/FullHouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/HighCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/HighCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/RoyalFlush$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/RoyalFlush$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/RoyalFlush.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/RoyalFlush.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Straight.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/Straight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/StraightFlush.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/StraightFlush.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/ThreeOfKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/ThreeOfKind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/TwoPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/amaap/pokergame/domain/ranking/TwoPair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/PokerManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/PokerManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/builder/CardBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/builder/CardBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/CardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/CardTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/DeckOfCardsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/DeckOfCardsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/HandEvaluatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/HandEvaluatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/model/PlayGameTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FlushTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FlushTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FourOfKindTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FourOfKindTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FullHouseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/FullHouseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/HighCardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/HighCardTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/PairTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/PairTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/RoyalFlushTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/RoyalFlushTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/StraightFlushTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/StraightFlushTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/StraightTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/StraightTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/ThreeOfKindTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/ThreeOfKindTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/TwoPairTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/amaap/pokergame/domain/ranking/TwoPairTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/PokerManagerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.model.CardTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.model.DeckOfCardsTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.model.HandEvaluatorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.model.HandEvaluatorTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.model.PlayGameTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.FlushTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.FourOfKindTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.FullHouseTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.HighCardTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.PairTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.RoyalFlushTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.StraightFlushTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.StraightTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.ThreeOfKindTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.amaap.pokergame.domain.ranking.TwoPairTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.amaap.pokergame.domain.model.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.amaap.pokergame.domain.model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.amaap.pokergame.domain.ranking.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-PokerManagerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.model.CardTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.model.DeckOfCardsTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.model.HandEvaluatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.model.HandEvaluatorTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.model.PlayGameTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.FlushTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.FourOfKindTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.FullHouseTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.HighCardTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.PairTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.RoyalFlushTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.StraightFlushTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.StraightTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.ThreeOfKindTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.amaap.pokergame.domain.ranking.TwoPairTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PokerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PokerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/HandEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/HandEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/PlayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/RankCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/RankCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/model/Suit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/ranking/HighCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amaap/pokergame/domain/ranking/HighCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PokerManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PokerManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/builder/CardBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/builder/CardBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/CardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/DeckOfCardsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/DeckOfCardsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/HandEvaluatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/HandEvaluatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/PlayGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/model/HandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FlushTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FlushTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FourOfKindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FourOfKindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FullHouseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/FullHouseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/HighCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/HighCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/PairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/PairTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/RoyalFlushTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/RoyalFlushTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/StraightFlushTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/StraightFlushTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/StraightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/StraightTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/ThreeOfKindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/ThreeOfKindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/TwoPairTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amaap/pokergame/domain/ranking/TwoPairTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +195,15 @@
       <recent name="com.amaap.pokergametest.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.HandEvaluatorTest">
-    <configuration name="FourOfKindTest.shouldBeAbleToIdentifyTheRankOfHandCardIsFourOfKind" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.HandEvaluatorTest.shouldIdentifyHighCard">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="pokerGame.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -103,7 +216,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.amaap.pokergame.domain.ranking.FourOfKindTest.shouldBeAbleToIdentifyTheRankOfHandCardIsFourOfKind&quot;" />
+            <option value="&quot;com.amaap.pokergame.domain.model.CardTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeckOfCardsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.amaap.pokergame.domain.model.DeckOfCardsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -136,7 +272,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="HandEvaluatorTest.shouldBeAbleToIdentifyFlush" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HandEvaluatorTest.shouldIdentifyHighCard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -149,53 +285,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.amaap.pokergame.domain.model.HandEvaluatorTest.shouldBeAbleToIdentifyFlush&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="HandEvaluatorTest.shouldBeAbleToIdentifyStraight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.amaap.pokergame.domain.model.HandEvaluatorTest.shouldBeAbleToIdentifyStraight&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PlayGameTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.amaap.pokergame.domain.model.PlayGameTest&quot;" />
+            <option value="&quot;com.amaap.pokergame.domain.model.HandEvaluatorTest.shouldIdentifyHighCard&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -207,11 +297,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.HandEvaluatorTest.shouldIdentifyHighCard" />
+        <item itemvalue="Gradle.DeckOfCardsTest" />
+        <item itemvalue="Gradle.CardTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.HandEvaluatorTest" />
-        <item itemvalue="Gradle.HandEvaluatorTest.shouldBeAbleToIdentifyFlush" />
-        <item itemvalue="Gradle.HandEvaluatorTest.shouldBeAbleToIdentifyStraight" />
-        <item itemvalue="Gradle.PlayGameTest" />
-        <item itemvalue="Gradle.FourOfKindTest.shouldBeAbleToIdentifyTheRankOfHandCardIsFourOfKind" />
       </list>
     </recent_temporary>
   </component>

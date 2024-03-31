@@ -1,12 +1,12 @@
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import com.amaap.pokergame.domain.exception.*;
 
 import java.util.List;
 
 public class PokerManager {
     private int deck;
-    private PlayGame playGame;
+    private Hand hand;
 
     public PokerManager(int deck) {
         this.deck = deck;
@@ -27,19 +27,19 @@ public class PokerManager {
     }
 
     public boolean startGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
-        playGame = new PlayGame();
-        if (assignDeckToPlayer(1)) return playGame.start();
+        hand = new Hand();
+        if (assignDeckToPlayer(1)) return hand.start();
         return false;
     }
 
     public String getHandRank(List<Card> card) {
-        if (playGame == null) {
+        if (hand == null) {
             throw new IllegalStateException("The game has not started yet... Call startGame() first.");
         }
-        return playGame.getHandRankFor(card);
+        return hand.getHandRankFor(card);
     }
 
-    public PlayGame getPlayGame() {
-        return playGame;
+    public Hand getPlayGame() {
+        return hand;
     }
 }

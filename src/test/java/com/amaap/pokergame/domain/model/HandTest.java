@@ -12,19 +12,19 @@ import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class PlayGameTest {
+class HandTest {
     @Test
     void shouldBeAbleToTakeFiveCardsAsInputFromTheUser() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
         // arrange
-        PlayGame playGame = new PlayGame();
-        String userInput = "AH,2D, 3S,4C,KH";
+        Hand hand = new Hand();
+        String userInput = "AH,2D,3S,4C,KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        boolean result = playGame.start();
+        boolean result = hand.start();
         System.setIn(System.in);
-        System.out.println(playGame.getUserHand());
+        System.out.println(hand.getUserHand());
 
         // assert
         assertTrue(result);
@@ -33,35 +33,35 @@ class PlayGameTest {
     @Test
     void shouldABleToThrowExceptionIfMoreThanFiveCardsAreGiven() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "AH,2D,3S,4C,KH,JD";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
-            playGame.start();
+            hand.start();
         });
     }
 
     @Test
     void shouldBeAbleToThrowExceptionIfLessThanThreeCardsAreGiven() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "AH,2D,3S";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
-            playGame.start();
+            hand.start();
         });
     }
 
     @Test
     void shouldBeAbleToThrowExceptionIfInputISEmpty() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = " ";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
@@ -69,7 +69,7 @@ class PlayGameTest {
 
         // act & assert
         assertThrows(EmptyCardException.class, () -> {
-            playGame.start();
+            hand.start();
         });
     }
 
@@ -77,7 +77,7 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowExceptionIfPlaceOfRankAndSuitsAreInterchanged() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "HA,2D,3S,4C,KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
@@ -85,7 +85,7 @@ class PlayGameTest {
 
         // act & assert
         assertThrows(InvalidCardTypeException.class, () -> {
-            playGame.start();
+            hand.start();
         });
     }
 
@@ -93,14 +93,14 @@ class PlayGameTest {
     void shouldBeABleToThrowExceptionIfOtherThanCardIsGivenInput() {
 
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "HA,2D,3S,4C,KP";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidCardTypeException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }
@@ -108,14 +108,14 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowExceptionIfOtherThanCardIsGivenAsInput() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "12,48,48,34,56";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidCardTypeException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }
@@ -123,14 +123,14 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowExceptionIfInvalidInoutFormatIsGiven() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "1234";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }
@@ -139,14 +139,14 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowExceptionIfSpacesAreGivenInput() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = " ,  , , , ";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidNumberOfCardException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }
@@ -154,14 +154,14 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowInvalidCardTypeExceptionIfCompleteCardIsNotGiven() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = " A,H ,J,T,4";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(InvalidCardTypeException.class, () -> {
-            playGame.start();
+            hand.start();
         });
     }
 
@@ -169,14 +169,14 @@ class PlayGameTest {
     void shouldAbleToThrowExceptionIfDoubleCardISFound() {
 
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "AH,AH,3S,4C,KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(cardAlreadyExistException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }
@@ -184,14 +184,14 @@ class PlayGameTest {
     @Test
     void shouldBeAbleToThrowExceptionIfSpacesAreGivenAfterEachCard() {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         String userInput = "AH, AH, 3S, 4C, KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act & assert
         assertThrows(cardAlreadyExistException.class, () -> {
-            playGame.start();
+            hand.start();
         });
 
     }

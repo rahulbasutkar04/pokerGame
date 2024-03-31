@@ -6,7 +6,7 @@ import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
 import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -37,15 +37,15 @@ public class RoyalFlushTest {
     @Test
     void shouldNotBeAbleToIdentifyRoyalCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         RoyalFlush royalFlush = new RoyalFlush();
         String userInput = "AH,2D,3S,4C,6H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        // act
 
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        // act
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertFalse(royalFlush.isStraightFlushCheck(cards));
@@ -54,15 +54,15 @@ public class RoyalFlushTest {
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         RoyalFlush royalFlush = new RoyalFlush();
         String userInput = "AH,KH,QH,JH,TH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(royalFlush.isStraightFlushCheck(cards));
@@ -71,15 +71,15 @@ public class RoyalFlushTest {
     @Test
     void shouldBeAbleToIdentifyFlushCardIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         RoyalFlush royalFlush = new RoyalFlush();
         String userInput = "TH,AH,JH,QH,KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(royalFlush.isStraightFlushCheck(cards));

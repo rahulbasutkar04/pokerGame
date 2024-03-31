@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amaap.pokergame.domain.model.HandEvaluatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.043">
+<testsuite name="com.amaap.pokergame.domain.model.HandEvaluatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-31T14:30:50" hostname="RAHULSLAPPY" time="0.119">
   <properties/>
-  <testcase name="shouldBeAbleToIdentifyFullHouse()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.015"/>
-  <testcase name="shouldIdentifyRoyalFlush()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.002"/>
-  <testcase name="shouldBeAbleToIdentifyFlush()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToIdentifyStraight()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToIdentifyPair()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.01"/>
-  <testcase name="shouldBeAbleToIdentifyFourOfAKind()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToIdentifyTwoPair()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToIdentifyThreeOfAKind()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.001"/>
-  <testcase name="shouldIBeAbleToIdentifyFullHouse()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.0"/>
-  <testcase name="shouldBeABleToIdentifyStraightFlush()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.0"/>
+  <testcase name="shouldIdentifyHighCard()" classname="com.amaap.pokergame.domain.model.HandEvaluatorTest" time="0.119"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

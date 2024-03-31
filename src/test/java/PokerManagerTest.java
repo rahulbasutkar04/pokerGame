@@ -1,6 +1,6 @@
 import com.amaap.pokergame.domain.exception.*;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -10,24 +10,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PokerManagerTest {
     @Test
-    void shouldAbleToAssignDeckOfCardToThePlayersToPlayGame() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
-        //arrange
+    void shouldBeAbleToAssignDeckOfCardToThePlayersToPlayGame() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException {
+        // arrange
         int DeckCount = 4;
         PokerManager pokerManager = new PokerManager(DeckCount);
-        //act
+        // act
         pokerManager.assignDeckToPlayer(1);
-        //assert
+        // assert
         int actual = pokerManager.getDeck();
         assertEquals(3, actual);
 
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfMoreThanOneDeckIsAskedByPlayer() {
-        //arrange
+    void shouldBeAbleToThrowExceptionIfMoreThanOneDeckIsAskedByPlayer() {
+        // arrange
         int DeckCount = 4;
         PokerManager pokerManager = new PokerManager(DeckCount);
-        //act & assert
+
+        // act & assert
         assertThrows(InvalidNumberOfDeckException.class, () -> {
             pokerManager.assignDeckToPlayer(2);
 
@@ -35,11 +36,12 @@ public class PokerManagerTest {
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfZeroNumberOrLessThanOneIsExpectedByPlayer() {
-        //arrange
+    void shouldBeAbleToThrowExceptionIfZeroNumberOrLessThanOneIsExpectedByPlayer() {
+        // arrange
         int DeckCount = 4;
         PokerManager pokerManager = new PokerManager(DeckCount);
-        //act & assert
+
+        // act & assert
         assertThrows(InvalidNumberOfDeckException.class, () -> {
             pokerManager.assignDeckToPlayer(-1);
         });
@@ -47,10 +49,11 @@ public class PokerManagerTest {
 
     @Test
     void shouldAbleToThrowExceptionIfNoDeckISAvailableToAllocate() {
-        //arrange
+        // arrange
         int DeckCount = 4;
         PokerManager pokerManager = new PokerManager(DeckCount);
-        //act & assert
+
+        // act & assert
         assertThrows(DeckOutOfAvailabilityException.class, () -> {
             pokerManager.assignDeckToPlayer(1);
             pokerManager.assignDeckToPlayer(1);
@@ -63,30 +66,34 @@ public class PokerManagerTest {
 
     @Test
     void shouldAbleToStartTheGameForThePlayer() throws InvalidNumberOfDeckException, DeckOutOfAvailabilityException, InvalidNumberOfCardException, EmptyCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
-        //arrange
+        // arrange
         int deckCount = 4;
         PokerManager pokerManager = new PokerManager(deckCount);
         pokerManager.assignDeckToPlayer(1);
         ByteArrayInputStream in = new ByteArrayInputStream("AH, 2D, 3S, 4C, KH".getBytes());
         System.setIn(in);
-        //act
+
+        // act
         boolean isGameStarted = pokerManager.startGame();
-        //assert
+
+        // assert
         assertTrue(isGameStarted);
     }
 
     @Test
     void shouldBeAbleToGetTheHandRankWhenCardIsGivenAndGameStarts() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         PokerManager pokerManager = new PokerManager(1);
         ByteArrayInputStream in = new ByteArrayInputStream("AH,KH,QH,JH,TH".getBytes());
         System.setIn(in);
-        //act
+
+        // act
         pokerManager.startGame();
-        PlayGame playGame = pokerManager.getPlayGame();
-        List<Card> userHand = playGame.getUserHand();
+        Hand hand = pokerManager.getPlayGame();
+        List<Card> userHand = hand.getUserHand();
         String handRank = pokerManager.getHandRank(userHand);
-        //assert
+
+        // assert
         assertEquals("Royal Flush", handRank);
     }
 

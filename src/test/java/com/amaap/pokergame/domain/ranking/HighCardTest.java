@@ -6,7 +6,7 @@ import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
 import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -24,10 +24,10 @@ public class HighCardTest {
         HighCard highCard = new HighCard();
         List<Card> cards = cardBuilder.getCardForHighCard();
 
-        //act
+        // act
         boolean actual = highCard.isHighCard(cards);
 
-        //assert
+        // assert
         assertTrue(actual);
 
     }
@@ -35,15 +35,15 @@ public class HighCardTest {
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         HighCard highCard = new HighCard();
         String userInput = "AH,2D,3S,4C,KH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(highCard.isHighCard(cards));
@@ -52,15 +52,15 @@ public class HighCardTest {
     @Test
     void shouldBeAbleToRecognizeHighCardIfOnlyHighRankedCardsAreGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         HighCard highCard = new HighCard();
         String userInput = "AH,KD,QS,JC,QH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(highCard.isHighCard(cards));
@@ -70,15 +70,15 @@ public class HighCardTest {
     @Test
     void shouldBeAbleToRecognizeLowHighCardIfOnlyLowerRankedCardsAreGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         HighCard highCard = new HighCard();
         String userInput = "TH,2D,3S,5C,9H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(highCard.isHighCard(cards));

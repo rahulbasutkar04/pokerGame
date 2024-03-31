@@ -16,4 +16,16 @@ public class HighCard {
 
         return true;
     }
+
+    public Card getHighestCard(List<Card> cardList) {
+        Card highestCard = cardList.get(0);
+        for (int i = 1; i < cardList.size(); i++) {
+            Card currentCard = cardList.get(i);
+            if (currentCard.getRank().compareTo(highestCard.getRank()) > 0) {
+                highestCard = currentCard;
+            }
+        }
+        return highestCard;
+    }
+
 }

@@ -6,7 +6,7 @@ import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
 import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import com.amaap.pokergame.domain.model.StraightFlushCheck;
 import org.junit.jupiter.api.Test;
 
@@ -36,15 +36,15 @@ public class FullHouseTest {
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         FullHouse fullHouse = new FullHouse();
         String userInput = "QH,QD,QC,4H,4C";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(fullHouse.isFullHouse(cards));
@@ -53,15 +53,15 @@ public class FullHouseTest {
     @Test
     void shouldNotBeAbleToIdentifyFlushCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         StraightFlushCheck flush = new Flush();
         String userInput = "AH,2D,3S,4C,6H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertFalse(flush.isStraightFlushCheck(cards));
@@ -71,15 +71,15 @@ public class FullHouseTest {
     @Test
     void shouldBeAbleToIdentifyFullHouseIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         FullHouse fullHouse = new FullHouse();
         String userInput = "4D,QD,QC,4H,QH";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(fullHouse.isFullHouse(cards));

@@ -6,7 +6,7 @@ import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
 import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -35,14 +35,16 @@ public class PairTest {
     @Test
     void shouldNotBeAbleToIdentifyPairCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         Pair pair = new Pair();
         String userInput = "AH,2D,3S,4C,6H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
+
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
+
         // assert
         assertFalse(pair.isPairCard(cards));
     }
@@ -50,15 +52,15 @@ public class PairTest {
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         Pair pair = new Pair();
         String userInput = "AH,2D,3S,4C,4H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(pair.isPairCard(cards));
@@ -67,15 +69,15 @@ public class PairTest {
     @Test
     void shouldBeAbleToIdentifyPairCardIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         Pair pair = new Pair();
         String userInput = "AH,2D,4S,3C,4C";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
 
         // assert
         assertTrue(pair.isPairCard(cards));

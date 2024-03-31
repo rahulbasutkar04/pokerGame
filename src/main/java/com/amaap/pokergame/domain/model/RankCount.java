@@ -1,8 +1,5 @@
 package com.amaap.pokergame.domain.model;
 
-import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.Rank;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

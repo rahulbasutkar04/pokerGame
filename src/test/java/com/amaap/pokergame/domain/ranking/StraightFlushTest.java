@@ -6,7 +6,7 @@ import com.amaap.pokergame.domain.exception.InvalidCardTypeException;
 import com.amaap.pokergame.domain.exception.InvalidNumberOfCardException;
 import com.amaap.pokergame.domain.exception.cardAlreadyExistException;
 import com.amaap.pokergame.domain.model.Card;
-import com.amaap.pokergame.domain.model.PlayGame;
+import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -38,15 +38,15 @@ public class StraightFlushTest {
     @Test
     void shouldNotBeAbleToIdentifyStraightFlushCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
         // arrange
-        PlayGame playGame = new PlayGame();
+        Hand hand = new Hand();
         StraightFlush straightFlush = new StraightFlush();
         String userInput = "AH,2D,3S,2C,2H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
         List<Card> cardList = new ArrayList<>(cards);
 
         // assert
@@ -55,15 +55,16 @@ public class StraightFlushTest {
 
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        PlayGame playGame = new PlayGame();
+       // arrange
+        Hand hand = new Hand();
         StraightFlush straightFlush = new StraightFlush();
         String userInput = "3H,4H,5H,6H,7H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
 
         // act
-        playGame.start();
-        List<Card> cards = playGame.getUserHand();
+        hand.start();
+        List<Card> cards = hand.getUserHand();
         List<Card> cardList = new ArrayList<>(cards);
 
         // assert

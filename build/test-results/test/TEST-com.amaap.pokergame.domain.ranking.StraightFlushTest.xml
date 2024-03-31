@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amaap.pokergame.domain.ranking.StraightFlushTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-29T10:59:50" hostname="RAHULSLAPPY" time="0.004">
-  <properties/>
-  <testcase name="shouldNotBeAbleToIdentifyStraightFlushCardIfItIsNot()" classname="com.amaap.pokergame.domain.ranking.StraightFlushTest" time="0.001"/>
-  <testcase name="shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven()" classname="com.amaap.pokergame.domain.ranking.StraightFlushTest" time="0.001"/>
-  <testcase name="shouldBeAbleToIdentifyTheRankOfHandCardIsStraightFlush()" classname="com.amaap.pokergame.domain.ranking.StraightFlushTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

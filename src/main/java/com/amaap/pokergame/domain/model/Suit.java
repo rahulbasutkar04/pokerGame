@@ -19,7 +19,12 @@ public enum Suit {
         this.keyword = keyword;
     }
 
+
     public static Suit fromKeyword(String keyword) {
         return keywordMap.get(keyword.toUpperCase());
+    }
+
+    public String getName() {
+        return keyword;
     }
 }

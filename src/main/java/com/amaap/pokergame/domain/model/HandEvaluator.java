@@ -27,7 +27,13 @@ public class HandEvaluator {
         } else if (new Pair().isPairCard(cardList)) {
             return HandRanking.ONE_PAIR;
         } else {
+            Card highestCard = extractHighCard(cardList);
             return HandRanking.HIGH_CARD;
         }
+    }
+
+    public Card extractHighCard(List<Card> cardList) {
+        HighCard highCardEvaluator = new HighCard();
+        return highCardEvaluator.getHighestCard(cardList);
     }
 }
