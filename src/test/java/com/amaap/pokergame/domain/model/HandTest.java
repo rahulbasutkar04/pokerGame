@@ -196,5 +196,22 @@ class HandTest {
 
     }
 
+    @Test
+    void shouldBeAbleToHandleLowerCaseInput() throws InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+        // arrange
+        Hand hand = new Hand();
+        String userInput = "ah,2d,3s,4c,kh";
+        InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inputStream);
+
+        // act
+        boolean result = hand.start();
+        System.setIn(System.in);
+
+        // assert
+        assertTrue(result);
+    }
+
+
 
 }

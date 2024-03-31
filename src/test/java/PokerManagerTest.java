@@ -99,5 +99,19 @@ public class PokerManagerTest {
         assertEquals("Royal Flush", handRank);
     }
 
+    @Test
+    void shouldThrowExceptionIfGetHandRankCalledBeforeGameStart() {
+        // arrange
+        PokerManager pokerManager = new PokerManager(1);
+
+        // act & assert
+        assertThrows(IllegalStateException.class, () -> pokerManager.getHandRank(List.of()));
+    }
+
+
+
+
+
+
 }
 

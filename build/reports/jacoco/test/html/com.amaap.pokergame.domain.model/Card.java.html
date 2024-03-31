@@ -22,7 +22,7 @@ public class Card {
     @Override
     public boolean equals(Object o) {
 <span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (this == o) return true;</span>
-<span class="pc bpc" id="L25" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc bfc" id="L25" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
 <span class="fc" id="L26">        Card card = (Card) o;</span>
 <span class="fc bfc" id="L27" title="All 4 branches covered.">        return rank == card.rank &amp;&amp;</span>
                 suit == card.suit;

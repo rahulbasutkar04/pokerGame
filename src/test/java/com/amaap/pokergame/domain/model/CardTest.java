@@ -2,8 +2,7 @@ package com.amaap.pokergame.domain.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
     @Test
@@ -70,4 +69,34 @@ class CardTest {
         assertEquals(card1, card2);
         assertEquals(card1.hashCode(), card2.hashCode());
     }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfCardsAreNotEqual() {
+        // arrange
+        Card card1 = new Card(Rank.ACE, Suit.HEARTS);
+        Card card2 = new Card(Rank.ACE, Suit.SPADES); // Different suit
+
+        // act & assert
+        assertNotEquals(card1, card2);
+        assertNotEquals(card1.hashCode(), card2.hashCode());
+    }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfComparedWithNull() {
+        // arrange
+        Card card = new Card(Rank.ACE, Suit.HEARTS);
+
+        // act & assert
+        assertNotEquals(card, null);
+    }
+
+    @Test
+    void shouldBeAbleToReturnFalseIfComparedWithDifferentObjectType() {
+        // arrange
+        Card card = new Card(Rank.ACE, Suit.HEARTS);
+
+        // act & assert
+        assertNotEquals(card, "This is not a card object");
+    }
+
 }
