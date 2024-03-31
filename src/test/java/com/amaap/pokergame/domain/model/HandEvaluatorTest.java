@@ -24,7 +24,7 @@ class HandEvaluatorTest {
     }
 
     @Test
-    void shouldBeABleToIdentifyStraightFlush() {
+    void shouldBeAbleToIdentifyStraightFlush() {
         // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
         List<Card> cards = cardBuilder.getCardForStraightFlush();
@@ -51,7 +51,7 @@ class HandEvaluatorTest {
     }
 
     @Test
-    void shouldIBeAbleToIdentifyFullHouse() {
+    void shouldBeAbleToIdentifyFullHouse() {
         // arrange
         HandEvaluator handEvaluator = new HandEvaluator();
         List<Card> cards = cardBuilder.getCardForFullHouse();
@@ -115,19 +115,6 @@ class HandEvaluatorTest {
         assertEquals(HandRanking.TWO_PAIR, ranking);
     }
 
-    @Test
-    void shouldBeAbleToIdentifyFullHouse() {
-        // arrange
-        HandEvaluator handEvaluator = new HandEvaluator();
-        List<Card> cards = cardBuilder.getCardForFullHouse();
-
-        // act
-        HandRanking ranking = handEvaluator.evaluateHand(cards);
-
-        // assert
-        assertEquals(HandRanking.FULL_HOUSE, ranking);
-
-    }
 
     @Test
     void shouldBeAbleToIdentifyPair() {
@@ -140,6 +127,22 @@ class HandEvaluatorTest {
 
         // assert
         assertEquals(HandRanking.ONE_PAIR, ranking);
+    }
+
+
+    @Test
+    void shouldIdentifyHighCard() {
+        // arrange
+        HandEvaluator handEvaluator = new HandEvaluator();
+        List<Card> cards = cardBuilder.getCardForHighCard();
+
+        // act
+        HandRanking ranking = handEvaluator.evaluateHand(cards);
+        Card highestCard = handEvaluator.extractHighCard(cards);
+
+        // assert
+        assertEquals(HandRanking.HIGH_CARD, ranking);
+        assertEquals("KING", highestCard.getRank().getName());
     }
 
 
