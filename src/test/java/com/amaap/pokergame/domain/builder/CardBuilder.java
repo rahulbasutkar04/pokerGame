@@ -42,10 +42,10 @@ public class CardBuilder {
 
     public  List<Card> getCardForHighCard(){
         cards.add(new Card(Rank.ACE, Suit.HEARTS));
-        cards.add(new Card(Rank.TWO, Suit.DIAMONDS));
-        cards.add(new Card(Rank.THREE, Suit.CLUBS));
-        cards.add(new Card(Rank.FOUR, Suit.SPADES));
-        cards.add(new Card(Rank.FIVE, Suit.HEARTS));
+        cards.add(new Card(Rank.KING, Suit.DIAMONDS));
+        cards.add(new Card(Rank.QUEEN, Suit.CLUBS));
+        cards.add(new Card(Rank.JACK, Suit.SPADES));
+        cards.add(new Card(Rank.TEN, Suit.HEARTS));
         return cards;
     }
 
