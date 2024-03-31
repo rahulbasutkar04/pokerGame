@@ -22,60 +22,67 @@ public class FourOfKindTest {
 
     @Test
     void shouldBeAbleToIdentifyTheRankOfHandCardIsFourOfKind() {
-        //arrange
+        // arrange
         FourOfKind fourOfKind = new FourOfKind();
         List<Card> cards = cardBuilder.getCardForFourOfAKind();
 
-        //act
+        // act
+
         boolean actual = fourOfKind.isFourOfKind(cards);
 
-        //assert
+        // assert
         assertTrue(actual);
 
     }
 
     @Test
     void shouldNotBeAbleToIdentifyFourOfKindCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         FourOfKind fourOfKind = new FourOfKind();
         String userInput = "AH,2D,3S,2C,2H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+
+        // assert
         assertFalse(fourOfKind.isFourOfKind(cards));
     }
 
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         FourOfKind fourOfKind = new FourOfKind();
         String userInput = "AH,2H,2D,2C,2S";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+
+        // assert
         assertTrue(fourOfKind.isFourOfKind(cards));
     }
 
     @Test
     void shouldBeAbleToIdentifyFourOfKindCardIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         FourOfKind fourOfKind = new FourOfKind();
         String userInput = "3H,AH,3S,3C,3D";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+
+        // assert
         assertTrue(fourOfKind.isFourOfKind(cards));
     }
 }

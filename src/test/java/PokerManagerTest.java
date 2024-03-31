@@ -14,8 +14,10 @@ public class PokerManagerTest {
         // arrange
         int DeckCount = 4;
         PokerManager pokerManager = new PokerManager(DeckCount);
+
         // act
         pokerManager.assignDeckToPlayer(1);
+
         // assert
         int actual = pokerManager.getDeck();
         assertEquals(3, actual);

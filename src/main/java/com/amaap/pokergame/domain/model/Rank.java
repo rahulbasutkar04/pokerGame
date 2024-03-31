@@ -21,35 +21,6 @@ public enum Rank {
         return keywordMap.get(keyword.toUpperCase());
     }
     public String getName() {
-        switch (this) {
-            case ACE:
-                return "ACE";
-            case TWO:
-                return "TWO";
-            case THREE:
-                return "THREE";
-            case FOUR:
-                return "FOUR";
-            case FIVE:
-                return "FIVE";
-            case SIX:
-                return "SIX";
-            case SEVEN:
-                return "SEVEN";
-            case EIGHT:
-                return "EIGHT";
-            case NINE:
-                return "NINE";
-            case TEN:
-                return "TEN";
-            case JACK:
-                return "JACK";
-            case QUEEN:
-                return "QUEEN";
-            case KING:
-                return "KING";
-            default:
-                throw new IllegalArgumentException("Unknown rank: " + this);
-        }
+      return  this.name();
     }
 }

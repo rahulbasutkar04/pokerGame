@@ -16,5 +16,17 @@ import java.util.List;
 
 <span class="fc" id="L17">        return true;</span>
     }
+
+    public Card getHighestCard(List&lt;Card&gt; cardList) {
+<span class="fc" id="L21">        Card highestCard = cardList.get(0);</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (int i = 1; i &lt; cardList.size(); i++) {</span>
+<span class="fc" id="L23">            Card currentCard = cardList.get(i);</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">            if (currentCard.getRank().compareTo(highestCard.getRank()) &gt; 0) {</span>
+<span class="fc" id="L25">                highestCard = currentCard;</span>
+            }
+        }
+<span class="fc" id="L28">        return highestCard;</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

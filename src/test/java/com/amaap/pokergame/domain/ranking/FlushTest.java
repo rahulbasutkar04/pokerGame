@@ -22,59 +22,62 @@ public class FlushTest {
 
     @Test
     void shouldBeAbleToIdentifyTheRankOfHandCardIsFlush() {
-        //arrange
+        // arrange
         StraightFlushCheck flush = new Flush();
         List<Card> cards = cardBuilder.getCards();
 
-        //act
+        // act
         boolean actual = flush.isStraightFlushCheck(cards);
-        //assert
+        // assert
         assertTrue(actual);
 
     }
 
     @Test
     void shouldNotBeAbleToIdentifyFlushCardIfItIsNot() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         StraightFlushCheck flush = new Flush();
         String userInput = "AH,2D,3S,4C,6H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+        // assert
         assertFalse(flush.isStraightFlushCheck(cards));
     }
 
     @Test
     void shouldBeAbleToRecognizeCardRankingIfActualInputIsGiven() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         StraightFlushCheck flush = new Flush();
         String userInput = "AH,2H,3H,4H,5H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+        // assert
         assertTrue(flush.isStraightFlushCheck(cards));
     }
 
     @Test
     void shouldBeAbleToIdentifyFlushCardIfPresentAtAnyOrder() throws cardAlreadyExistException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException {
-        //arrange
+        // arrange
         Hand hand = new Hand();
         StraightFlushCheck flush = new Flush();
         String userInput = "AH,2H,4H,3H,5H";
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-        //act
+
+        // act
         hand.start();
         List<Card> cards = hand.getUserHand();
-        //assert
+
+        // assert
         assertTrue(flush.isStraightFlushCheck(cards));
     }
 }

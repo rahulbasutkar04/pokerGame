@@ -25,8 +25,8 @@ public class DeckOfCards {
 
 
     public void assignTheFiveCardsToUser(Player user) {
-<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (cards.size() &lt; 5) {</span>
-<span class="nc" id="L29">            throw new IllegalStateException(&quot;Insufficient cards in the deck&quot;);</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (cards.size() &lt; 5) {</span>
+<span class="fc" id="L29">            throw new IllegalStateException(&quot;Insufficient cards in the deck&quot;);</span>
         }
 <span class="fc bfc" id="L31" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
 <span class="fc" id="L32">            Card dealtCard = cards.remove(0);</span>

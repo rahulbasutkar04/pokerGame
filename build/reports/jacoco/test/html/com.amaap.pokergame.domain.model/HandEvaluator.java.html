@@ -24,11 +24,17 @@ import java.util.List;
 <span class="fc" id="L24">            return HandRanking.THREE_OF_A_KIND;</span>
 <span class="fc bfc" id="L25" title="All 2 branches covered.">        } else if (new TwoPair().isTwoPairCard(cardList)) {</span>
 <span class="fc" id="L26">            return HandRanking.TWO_PAIR;</span>
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        } else if (new Pair().isPairCard(cardList)) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        } else if (new Pair().isPairCard(cardList)) {</span>
 <span class="fc" id="L28">            return HandRanking.ONE_PAIR;</span>
         } else {
-<span class="nc" id="L30">            return HandRanking.HIGH_CARD;</span>
+<span class="fc" id="L30">            Card highestCard = extractHighCard(cardList);</span>
+<span class="fc" id="L31">            return HandRanking.HIGH_CARD;</span>
         }
+    }
+
+    public Card extractHighCard(List&lt;Card&gt; cardList) {
+<span class="fc" id="L36">        HighCard highCardEvaluator = new HighCard();</span>
+<span class="fc" id="L37">        return highCardEvaluator.getHighestCard(cardList);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

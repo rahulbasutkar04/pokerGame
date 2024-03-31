@@ -20,5 +20,37 @@ import java.util.Map;
     public static Rank fromKeyword(String keyword) {
 <span class="fc" id="L21">        return keywordMap.get(keyword.toUpperCase());</span>
     }
+    public String getName() {
+<span class="pc bpc" id="L24" title="13 of 14 branches missed.">        switch (this) {</span>
+            case ACE:
+<span class="nc" id="L26">                return &quot;ACE&quot;;</span>
+            case TWO:
+<span class="nc" id="L28">                return &quot;TWO&quot;;</span>
+            case THREE:
+<span class="nc" id="L30">                return &quot;THREE&quot;;</span>
+            case FOUR:
+<span class="nc" id="L32">                return &quot;FOUR&quot;;</span>
+            case FIVE:
+<span class="nc" id="L34">                return &quot;FIVE&quot;;</span>
+            case SIX:
+<span class="nc" id="L36">                return &quot;SIX&quot;;</span>
+            case SEVEN:
+<span class="nc" id="L38">                return &quot;SEVEN&quot;;</span>
+            case EIGHT:
+<span class="nc" id="L40">                return &quot;EIGHT&quot;;</span>
+            case NINE:
+<span class="nc" id="L42">                return &quot;NINE&quot;;</span>
+            case TEN:
+<span class="nc" id="L44">                return &quot;TEN&quot;;</span>
+            case JACK:
+<span class="nc" id="L46">                return &quot;JACK&quot;;</span>
+            case QUEEN:
+<span class="nc" id="L48">                return &quot;QUEEN&quot;;</span>
+            case KING:
+<span class="fc" id="L50">                return &quot;KING&quot;;</span>
+            default:
+<span class="nc" id="L52">                throw new IllegalArgumentException(&quot;Unknown rank: &quot; + this);</span>
+        }
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
