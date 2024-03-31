@@ -28,13 +28,13 @@ public class PokerManager {
 
     public boolean startGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
 <span class="fc" id="L30">        hand = new Hand();</span>
-<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (assignDeckToPlayer(1)) return hand.start();</span>
-<span class="nc" id="L32">        return false;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (assignDeckToPlayer(1)) return hand.start();</span>
+<span class="fc" id="L32">        return false;</span>
     }
 
     public String getHandRank(List&lt;Card&gt; card) {
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (hand == null) {</span>
-<span class="nc" id="L37">            throw new IllegalStateException(&quot;The game has not started yet... Call startGame() first.&quot;);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (hand == null) {</span>
+<span class="fc" id="L37">            throw new IllegalStateException(&quot;The game has not started yet... Call startGame() first.&quot;);</span>
         }
 <span class="fc" id="L39">        return hand.getHandRankFor(card);</span>
     }

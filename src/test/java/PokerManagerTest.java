@@ -2,6 +2,7 @@ import com.amaap.pokergame.domain.exception.*;
 import com.amaap.pokergame.domain.model.Card;
 import com.amaap.pokergame.domain.model.Hand;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
@@ -109,8 +110,19 @@ public class PokerManagerTest {
     }
 
 
+    @Test
+    void shouldReturnFalseWhenFailedToAssignDeckAndStartingGame() throws DeckOutOfAvailabilityException, InvalidNumberOfDeckException, InvalidNumberOfCardException, EmptyCardException, InvalidCardTypeException, cardAlreadyExistException {
+        // arrange
+        PokerManager pokerManager = new PokerManager(0);
+        PokerManager spyManager = Mockito.spy(pokerManager);
+        Mockito.doReturn(false).when(spyManager).assignDeckToPlayer(Mockito.anyInt());
 
+        // act
+        boolean result = spyManager.startGame();
 
+        // assert
+        assertFalse(result);
+    }
 
 
 }
